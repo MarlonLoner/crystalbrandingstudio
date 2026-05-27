@@ -1,0 +1,26 @@
+{
+  "name": "crystal-pop-out-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/next-with-wasm.mjs dev",
+    "build": "node scripts/next-with-wasm.mjs build",
+    "lint": "node scripts/next-with-wasm.mjs lint"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "next": "15.5.7",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@next/swc-wasm-nodejs": "15.5.7",
+    "@types/node": "22.15.3",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "autoprefixer": "10.4.21",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.8.3"
+  }
+}
