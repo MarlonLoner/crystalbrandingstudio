@@ -145,7 +145,11 @@ button {
 .cta-panel,
 .proof-panel,
 .proof-card,
-.preview-step {
+.preview-step,
+.builder-panel,
+.builder-summary,
+.smart-pack-card,
+.need-card {
   border: 1px solid rgba(255, 255, 255, 0.11);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
@@ -495,6 +499,133 @@ button {
   line-height: 1.35;
 }
 
+.builder-panel,
+.builder-summary,
+.need-card {
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.builder-label {
+  color: #a5f3fc;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.builder-option,
+.selector-pill {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 12px 14px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.builder-option:hover,
+.builder-option-active,
+.selector-pill:hover,
+.selector-pill-active {
+  border-color: rgba(103, 232, 249, 0.42);
+  background: rgba(103, 232, 249, 0.11);
+  color: #ecfeff;
+  transform: translateY(-1px);
+}
+
+.selector-pill.justify-start {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.summary-row,
+.need-row,
+.smart-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px;
+}
+
+.summary-row {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.summary-row span {
+  color: #71717a;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.summary-row strong {
+  color: #fff;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.smart-pack-card {
+  min-height: 214px;
+  border-radius: 10px;
+  padding: 22px;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.smart-pack-card:hover,
+.smart-pack-card-active {
+  border-color: rgba(103, 232, 249, 0.42);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(103, 232, 249, 0.16), transparent 42%),
+    rgba(255, 255, 255, 0.055);
+  transform: translateY(-2px);
+}
+
+.smart-action {
+  color: #ecfeff;
+  font-size: 0.92rem;
+  font-weight: 900;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.smart-action:hover {
+  border-color: rgba(255, 112, 133, 0.42);
+  background: rgba(255, 48, 79, 0.1);
+  transform: translateX(3px);
+}
+
+.need-card {
+  min-height: 340px;
+}
+
+.need-row {
+  align-items: flex-start;
+  color: #d4d4d8;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .filter-chip {
   min-height: 42px;
   white-space: nowrap;
@@ -684,7 +815,10 @@ button {
   .command-shell,
   .insight-panel,
   .upload-console,
-  .lab-panel {
+  .lab-panel,
+  .builder-panel,
+  .builder-summary,
+  .need-card {
     padding: 18px;
   }
 

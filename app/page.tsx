@@ -52,7 +52,19 @@ const serviceLinks = {
     "Hi Crystal Branding Studio, I want to explore digital systems for my business, including website, WhatsApp, social media, and lead generation support."
   ),
   smartWash: makeWhatsAppLink(
-    "Hi Crystal Branding Studio, I want Smart Wash product/reseller details and campaign support."
+    "Hi Crystal Branding Studio, I want Crystal Smart Wash washing powder details."
+  ),
+  smartWash1Kg: makeWhatsAppLink(
+    "Hi Crystal Branding Studio, I want to order Crystal Smart Wash washing powder in the 1KG pack."
+  ),
+  smartWash2Kg: makeWhatsAppLink(
+    "Hi Crystal Branding Studio, I want to order Crystal Smart Wash washing powder in the 2KG pack."
+  ),
+  smartWashReseller: makeWhatsAppLink(
+    "Hi Crystal Branding Studio, I want to ask about Crystal Smart Wash reseller pricing."
+  ),
+  smartWashBulk: makeWhatsAppLink(
+    "Hi Crystal Branding Studio, I want to request a Crystal Smart Wash bulk order quote."
   ),
   entrepreneursDesk: makeWhatsAppLink(
     "Hi Crystal Branding Studio, I want to enter Entrepreneurs Desk for media visibility."
@@ -70,9 +82,11 @@ const upgradeWhatsappLink = (upgradeName: string) =>
 const navItems = [
   ["Home", "#home"],
   ["Brand Upgrades", "#upgrades"],
+  ["Project Builder", "#project-builder"],
   ["POP OUT Gallery", "#gallery"],
   ["Upload Zone", "#upload"],
   ["Smart Wash", "#smart-wash"],
+  ["What We Need", "#what-we-need"],
   ["Entrepreneurs Desk", "#entrepreneurs-desk"],
   ["Start Project", "#start-project"],
 ];
@@ -148,9 +162,9 @@ const galleryItems = [
     tone: "Activation",
   },
   {
-    title: "Smart Wash Starter Shelf",
+    title: "Crystal Smart Wash Shelf",
     type: "Product",
-    metric: "Reseller-ready",
+    metric: "1KG / 2KG packs",
     tone: "FMCG",
   },
 ];
@@ -193,7 +207,7 @@ const ecosystem = [
   {
     name: "Crystal Smart Wash",
     icon: Droplets,
-    copy: "Product opportunities, reseller pathways, retail display support, and branded packaging.",
+    copy: "A featured washing powder product available in 1KG and 2KG packs with order, reseller, and bulk inquiry paths.",
   },
   {
     name: "Digital Growth Systems",
@@ -216,11 +230,110 @@ const digitalSystems = [
   "Retargeting-ready brand assets",
 ];
 
-const smartWashProducts = [
-  { name: "Car Shampoo", status: "Retail shelf", score: 88 },
-  { name: "Tyre Shine", status: "High margin", score: 94 },
-  { name: "Dashboard Polish", status: "Bundle hero", score: 82 },
-  { name: "Degreaser", status: "Workshop demand", score: 91 },
+const smartWashPacks = [
+  {
+    size: "1KG",
+    title: "Crystal Smart Wash 1KG",
+    copy: "Compact pack for household use, trial orders, and fast shelf movement.",
+    href: serviceLinks.smartWash1Kg,
+  },
+  {
+    size: "2KG",
+    title: "Crystal Smart Wash 2KG",
+    copy: "Larger value pack for families, repeat buyers, and higher-volume orders.",
+    href: serviceLinks.smartWash2Kg,
+  },
+];
+
+const smartWashActions = [
+  { label: "Order 1KG", href: serviceLinks.smartWash1Kg, icon: ShoppingBag },
+  { label: "Order 2KG", href: serviceLinks.smartWash2Kg, icon: PackageCheck },
+  { label: "Ask About Reseller Pricing", href: serviceLinks.smartWashReseller, icon: BadgeDollarSign },
+  { label: "Request Bulk Order", href: serviceLinks.smartWashBulk, icon: Factory },
+];
+
+const projectTypes = [
+  {
+    name: "Shopfront Signage",
+    icon: Store,
+    goals: ["Increase walk-in visibility", "Refresh an existing storefront", "Prepare a signage quote"],
+  },
+  {
+    name: "3D Signage",
+    icon: Gem,
+    goals: ["Create a premium storefront look", "Upgrade night visibility", "Launch a standout brand mark"],
+  },
+  {
+    name: "Vehicle Branding",
+    icon: Zap,
+    goals: ["Turn vehicles into moving adverts", "Brand a delivery vehicle", "Refresh a fleet identity"],
+  },
+  {
+    name: "Banner / Print",
+    icon: Megaphone,
+    goals: ["Promote an offer", "Prepare an event display", "Print launch materials"],
+  },
+  {
+    name: "Website / Online Store",
+    icon: MonitorSmartphone,
+    goals: ["Sell or showcase online", "Launch a stronger web presence", "Convert traffic into enquiries"],
+  },
+  {
+    name: "Lead Generation System",
+    icon: Target,
+    goals: ["Capture WhatsApp leads", "Build a campaign funnel", "Track enquiries more clearly"],
+  },
+  {
+    name: "Smart Wash Order",
+    icon: Droplets,
+    goals: ["Order 1KG or 2KG packs", "Discuss reseller pricing", "Request a bulk order"],
+  },
+  {
+    name: "Entrepreneurs Desk Inquiry",
+    icon: Radio,
+    goals: ["Feature my business story", "Book a media conversation", "Promote a launch"],
+  },
+];
+
+const timelineOptions = ["Urgent: 1-3 days", "This week", "This month", "Planning ahead"];
+
+const assetOptions = [
+  "Yes, logo/assets are ready",
+  "Some assets are available",
+  "No, I need help creating them",
+];
+
+const whatWeNeed = [
+  {
+    title: "For signage and branding",
+    icon: Store,
+    items: [
+      "Clear shopfront or vehicle photos",
+      "Approximate measurements",
+      "Location and installation notes",
+      "Logo, colors, and wording if available",
+    ],
+  },
+  {
+    title: "For digital systems",
+    icon: MonitorSmartphone,
+    items: [
+      "Business name and offer",
+      "Target audience and location",
+      "Existing website/social links",
+      "WhatsApp number and lead goal",
+    ],
+  },
+  {
+    title: "For Smart Wash orders",
+    icon: Droplets,
+    items: [
+      "Preferred pack size: 1KG or 2KG",
+      "Quantity needed",
+      "Delivery or pickup location",
+      "Reseller or bulk order interest",
+    ],
+  },
 ];
 
 const deskModules = [
@@ -249,7 +362,11 @@ export default function Home() {
   const [selectedUpgrade, setSelectedUpgrade] = useState(upgrades[0]);
   const [galleryFilter, setGalleryFilter] = useState("All");
   const [fileName, setFileName] = useState("No file selected");
-  const [labMode, setLabMode] = useState(2);
+  const [selectedSmartWashPack, setSelectedSmartWashPack] = useState(smartWashPacks[0]);
+  const [selectedProjectType, setSelectedProjectType] = useState(projectTypes[0]);
+  const [selectedGoal, setSelectedGoal] = useState(projectTypes[0].goals[0]);
+  const [selectedTimeline, setSelectedTimeline] = useState(timelineOptions[1]);
+  const [selectedAssets, setSelectedAssets] = useState(assetOptions[0]);
 
   const filters = useMemo(
     () => ["All", ...Array.from(new Set(galleryItems.map((item) => item.type)))],
@@ -261,7 +378,19 @@ export default function Home() {
       ? galleryItems
       : galleryItems.filter((item) => item.type === galleryFilter);
 
-  const LabIcon = smartWashProducts[labMode]?.score > 90 ? Sparkles : PackageCheck;
+  const projectBuilderLink = makeWhatsAppLink(
+    `Hi Crystal Branding Studio, I used the POP OUT Project Builder.
+Project type: ${selectedProjectType.name}
+Goal: ${selectedGoal}
+Timeline: ${selectedTimeline}
+Logo/assets: ${selectedAssets}
+Please guide me on the next steps and quote.`
+  );
+
+  const selectProjectType = (projectType: (typeof projectTypes)[number]) => {
+    setSelectedProjectType(projectType);
+    setSelectedGoal(projectType.goals[0]);
+  };
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#08090b] text-zinc-100">
@@ -326,8 +455,9 @@ export default function Home() {
             <p className="mt-6 max-w-[min(42rem,100%)] text-base leading-8 text-zinc-300 sm:text-lg">
               Crystal helps businesses POP OUT with signage, shopfront branding,
               vehicle branding, digital growth systems, product campaigns,
-              Crystal Smart Wash opportunities, and Entrepreneurs Desk media
-              visibility from one conversion-focused command center.
+              Crystal Smart Wash washing powder in 1KG and 2KG packs, and
+              Entrepreneurs Desk media visibility from one conversion-focused
+              command center.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -484,6 +614,127 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="project-builder" className="section-band border-y border-white/10 bg-white/[0.025]">
+        <SectionHeader
+          eyebrow="POP OUT Project Builder"
+          title="Build a focused brief before you ask for a quote."
+          copy="Choose the project lane, goal, timeline, and asset readiness. Crystal turns your answers into a WhatsApp-ready brief."
+        />
+
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <div className="builder-panel">
+            <div>
+              <p className="builder-label">Project type</p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                {projectTypes.map((projectType) => (
+                  <button
+                    key={projectType.name}
+                    type="button"
+                    onClick={() => selectProjectType(projectType)}
+                    className={cn(
+                      "builder-option",
+                      selectedProjectType.name === projectType.name && "builder-option-active"
+                    )}
+                  >
+                    <projectType.icon className="h-5 w-5" />
+                    <span>{projectType.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-7">
+              <p className="builder-label">Goal</p>
+              <div className="mt-3 grid gap-3 md:grid-cols-3">
+                {selectedProjectType.goals.map((goal) => (
+                  <button
+                    key={goal}
+                    type="button"
+                    onClick={() => setSelectedGoal(goal)}
+                    className={cn("selector-pill", selectedGoal === goal && "selector-pill-active")}
+                  >
+                    {goal}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-7 grid gap-5 lg:grid-cols-2">
+              <div>
+                <p className="builder-label">Timeline</p>
+                <div className="mt-3 grid gap-3">
+                  {timelineOptions.map((timeline) => (
+                    <button
+                      key={timeline}
+                      type="button"
+                      onClick={() => setSelectedTimeline(timeline)}
+                      className={cn(
+                        "selector-pill justify-start",
+                        selectedTimeline === timeline && "selector-pill-active"
+                      )}
+                    >
+                      {timeline}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="builder-label">Logo/assets</p>
+                <div className="mt-3 grid gap-3">
+                  {assetOptions.map((assetOption) => (
+                    <button
+                      key={assetOption}
+                      type="button"
+                      onClick={() => setSelectedAssets(assetOption)}
+                      className={cn(
+                        "selector-pill justify-start",
+                        selectedAssets === assetOption && "selector-pill-active"
+                      )}
+                    >
+                      {assetOption}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside className="builder-summary">
+            <div className="flex items-center justify-between gap-4">
+              <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-cyan-100">
+                Generated brief
+              </span>
+              <LayoutDashboard className="h-6 w-6 text-cyan-200" />
+            </div>
+            <h3 className="mt-8 font-display text-3xl font-bold text-white">
+              {selectedProjectType.name}
+            </h3>
+            <div className="mt-6 space-y-3">
+              {[
+                ["Goal", selectedGoal],
+                ["Timeline", selectedTimeline],
+                ["Logo/assets", selectedAssets],
+              ].map(([label, value]) => (
+                <div key={label} className="summary-row">
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
+            <a
+              href={projectBuilderLink}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-4 text-sm font-bold text-zinc-950 transition hover:bg-cyan-100"
+            >
+              Send Project Brief On WhatsApp
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </aside>
+        </div>
+      </section>
+
       <section id="upgrades" className="section-band">
         <SectionHeader
           eyebrow="Choose your brand upgrade"
@@ -633,7 +884,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="POP OUT Gallery"
           title="Visibility concepts arranged like a live production board."
-          copy="Filter through signage, vehicles, retail, events, interior upgrades, and Smart Wash-ready product displays."
+          copy="Filter through signage, vehicles, retail, events, interior upgrades, and Crystal Smart Wash 1KG/2KG pack displays."
         />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -681,7 +932,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="Crystal Ecosystem"
           title="One studio, multiple engines for brand visibility."
-          copy="Move from physical branding to digital funnels, product opportunities, and media credibility."
+          copy="Move from physical branding to digital funnels, Crystal Smart Wash ordering, and media credibility."
         />
 
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
@@ -726,18 +977,31 @@ export default function Home() {
       <section id="smart-wash" className="section-band border-y border-white/10 bg-white/[0.025]">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
           <div>
-            <p className="section-eyebrow">Smart Wash Product Lab</p>
+            <p className="section-eyebrow">Crystal Smart Wash</p>
             <h2 className="section-title">
-              Explore reseller and product visibility opportunities.
+              One washing powder product. Two pack sizes.
             </h2>
             <p className="section-copy">
-              Crystal Smart Wash connects product demand, retail display readiness, and branding support for entrepreneurs.
+              Crystal Smart Wash is a featured washing powder available in 1KG
+              and 2KG packaging. Order a pack, ask about reseller pricing, or
+              request a bulk order quote through WhatsApp.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href={serviceLinks.smartWash} target="_blank" rel="noreferrer" className="btn-primary">
-                <ShoppingBag className="h-5 w-5" />
-                Request Smart Wash Details
-              </a>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {smartWashPacks.map((pack) => (
+                <button
+                  key={pack.size}
+                  type="button"
+                  onClick={() => setSelectedSmartWashPack(pack)}
+                  className={cn(
+                    "smart-pack-card text-left",
+                    selectedSmartWashPack.size === pack.size && "smart-pack-card-active"
+                  )}
+                >
+                  <span className="font-display text-3xl font-black text-white">{pack.size}</span>
+                  <strong className="mt-3 block text-white">{pack.title}</strong>
+                  <span className="mt-2 block text-sm leading-6 text-zinc-400">{pack.copy}</span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -745,39 +1009,69 @@ export default function Home() {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-zinc-500">
-                  Product opportunity
+                  Featured pack
                 </p>
                 <h3 className="mt-1 font-display text-2xl font-bold text-white">
-                  {smartWashProducts[labMode].name}
+                  {selectedSmartWashPack.title}
                 </h3>
               </div>
               <span className="card-icon">
-                <LabIcon className="h-6 w-6" />
+                <Droplets className="h-6 w-6" />
               </span>
             </div>
 
-            <div className="mt-8 space-y-3">
-              {smartWashProducts.map((product, index) => (
-                <button
-                  key={product.name}
-                  type="button"
-                  onClick={() => setLabMode(index)}
-                  className={cn("product-row", labMode === index && "product-row-active")}
+            <p className="mt-5 text-sm leading-7 text-zinc-300">
+              Current focus: {selectedSmartWashPack.copy} Use the action buttons
+              below to open a specific WhatsApp order or reseller inquiry.
+            </p>
+
+            <div className="mt-8 grid gap-3">
+              {smartWashActions.map((action) => (
+                <a
+                  key={action.label}
+                  href={action.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="smart-action"
                 >
-                  <span>{product.name}</span>
-                  <span className="ml-auto text-xs text-zinc-400">{product.status}</span>
-                  <span className="score-pill">{product.score}</span>
-                </button>
+                  <action.icon className="h-5 w-5" />
+                  <span>{action.label}</span>
+                  <ArrowRight className="ml-auto h-4 w-4" />
+                </a>
               ))}
             </div>
 
-            <div className="mt-7 h-3 overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-red-400 transition-all duration-500"
-                style={{ width: `${smartWashProducts[labMode].score}%` }}
-              />
+            <div className="mt-7 rounded-md border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">
+              Available packs: 1KG and 2KG Crystal Smart Wash washing powder.
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="what-we-need" className="section-band">
+        <SectionHeader
+          eyebrow="What We Need From You"
+          title="Prepare the basics so Crystal can move faster."
+          copy="A clean brief helps the team quote, preview, produce, or process your order with less back-and-forth."
+        />
+
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+          {whatWeNeed.map((group) => (
+            <article key={group.title} className="need-card">
+              <span className="card-icon">
+                <group.icon className="h-6 w-6" />
+              </span>
+              <h3 className="mt-6 font-display text-2xl font-bold text-white">{group.title}</h3>
+              <div className="mt-6 space-y-3">
+                {group.items.map((item) => (
+                  <div key={item} className="need-row">
+                    <Check className="h-4 w-4 text-cyan-200" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -811,17 +1105,19 @@ export default function Home() {
               Ready to make your brand POP OUT?
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300">
-              Start with a brand upgrade brief, upload a shopfront image, or enter the Crystal ecosystem through Smart Wash and Entrepreneurs Desk.
+              Start with the POP OUT Project Builder, upload a shopfront image,
+              request signage or digital systems, order Crystal Smart Wash, or
+              enter Entrepreneurs Desk.
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0">
-            <a href={serviceLinks.generalQuote} target="_blank" rel="noreferrer" className="btn-primary">
+            <a href="#project-builder" className="btn-primary">
               <MessageCircle className="h-5 w-5" />
-              Start Brand Upgrade
+              Build Project Brief
             </a>
-            <a href="#upload" className="btn-secondary">
+            <a href={serviceLinks.generalQuote} target="_blank" rel="noreferrer" className="btn-secondary">
               <CloudUpload className="h-5 w-5" />
-              Upload Shopfront For Free Preview
+              Request General Quote
             </a>
           </div>
         </div>
