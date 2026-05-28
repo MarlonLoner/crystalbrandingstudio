@@ -204,6 +204,8 @@ const trustStatements = [
   "Placeholder trust statement: WhatsApp-first communication for faster project movement.",
 ];
 
+// Replace these placeholder cases with real Crystal projects: client/project name, category,
+// before problem, Crystal solution, measurable result, real photo URL, and the correct CTA route.
 const proofWallCases = [
   {
     title: "Shopfront Visibility Upgrade",
@@ -213,6 +215,7 @@ const proofWallCases = [
     result: "Before: easy to miss. After: clearer walk-in signal and quote-ready signage direction.",
     metric: "+72% street presence",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
+    imageUrl: null,
     icon: Store,
   },
   {
@@ -223,6 +226,7 @@ const proofWallCases = [
     result: "Before: flat and forgettable. After: premium entrance presence with stronger recognition.",
     metric: "Premium authority",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
+    imageUrl: null,
     icon: Gem,
   },
   {
@@ -233,6 +237,7 @@ const proofWallCases = [
     result: "Before: transport only. After: mobile advertising that keeps working during daily routes.",
     metric: "Route-ready ads",
     href: GROWTH_OS_GENERAL_INTAKE,
+    imageUrl: null,
     icon: Zap,
   },
   {
@@ -243,6 +248,7 @@ const proofWallCases = [
     result: "Before: scattered promotion. After: focused campaign message for events, roadsides, and retail points.",
     metric: "Campaign-ready",
     href: GROWTH_OS_GENERAL_INTAKE,
+    imageUrl: null,
     icon: Megaphone,
   },
   {
@@ -253,6 +259,7 @@ const proofWallCases = [
     result: "Before: attention leaked. After: a clearer enquiry system built for quote requests and follow-up.",
     metric: "Lead path live",
     href: GROWTH_OS_GENERAL_INTAKE,
+    imageUrl: null,
     icon: MonitorSmartphone,
   },
   {
@@ -265,32 +272,41 @@ const proofWallCases = [
     href: makeSmartWashWhatsAppLink(
       "Hi Crystal Branding Studio, I want a Crystal Smart Wash reseller push like the POP OUT Proof Wall example."
     ),
+    imageUrl: null,
     icon: Droplets,
   },
 ];
 
-const googleReviewsUrl = "https://www.google.com/search?q=Crystal+Branding+Studio+Google+Reviews";
+// Replace this with the real Google Business Profile reviews URL when it is available.
+const VIEW_GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=Crystal+Branding+Studio+Google+Reviews";
 
+// Replace these placeholder reviews with real Google review data: reviewer name,
+// rating, review text, and set isPlaceholder to false once verified.
 const trustReviews = [
   {
     name: "T. Moyo",
     rating: 5,
     text: "Placeholder Google review: Crystal made our storefront clearer and easier to notice from the road.",
+    isPlaceholder: true,
   },
   {
     name: "R. Ndlovu",
     rating: 5,
     text: "Placeholder Google review: Fast guidance, clean branding direction, and a clear path into the quote.",
+    isPlaceholder: true,
   },
   {
     name: "M. Chari",
     rating: 5,
     text: "Placeholder Google review: The signage concept helped our business feel more professional immediately.",
+    isPlaceholder: true,
   },
   {
     name: "K. Dube",
     rating: 4,
     text: "Placeholder Google review: Good communication and practical advice for print, display, and online visibility.",
+    isPlaceholder: true,
   },
 ];
 
@@ -303,6 +319,8 @@ const storefrontCategories = [
   "Smart Wash",
 ];
 
+// Replace these placeholder products with Crystal's real product catalogue details:
+// product photos, descriptions, ideal use cases, categories, and the correct intake or WhatsApp CTA.
 const storefrontProducts = [
   {
     name: "3D Shopfront Signage",
@@ -311,6 +329,7 @@ const storefrontProducts = [
     bestFor: "Shopfront authority, entrances, and high-trust brand presence.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
     cta: "Start Shopfront Intake",
+    imageUrl: null,
     icon: Gem,
   },
   {
@@ -320,6 +339,7 @@ const storefrontProducts = [
     bestFor: "Retail fronts, road-facing shops, and late-hour visibility.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
     cta: "Start Shopfront Intake",
+    imageUrl: null,
     icon: Lightbulb,
   },
   {
@@ -329,6 +349,7 @@ const storefrontProducts = [
     bestFor: "Quick shopfront campaigns and photo-based preview requests.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
     cta: "Upload Shopfront In Growth OS",
+    imageUrl: null,
     icon: ImageUp,
   },
   {
@@ -338,6 +359,7 @@ const storefrontProducts = [
     bestFor: "Exhibitions, pop-ups, offices, and point-of-sale messaging.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: Megaphone,
   },
   {
@@ -347,6 +369,7 @@ const storefrontProducts = [
     bestFor: "Roadside promos, churches, launches, and outdoor activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: FlagIcon,
   },
   {
@@ -356,6 +379,7 @@ const storefrontProducts = [
     bestFor: "Sales teams, founders, reps, and service businesses.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: BriefcaseBusiness,
   },
   {
@@ -365,6 +389,7 @@ const storefrontProducts = [
     bestFor: "Local launches, promotions, and direct customer distribution.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: Megaphone,
   },
   {
@@ -374,6 +399,7 @@ const storefrontProducts = [
     bestFor: "Product packaging, promos, and brand consistency.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: ScanLine,
   },
   {
@@ -383,6 +409,7 @@ const storefrontProducts = [
     bestFor: "Delivery vehicles, company cars, fleets, and field teams.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: Zap,
   },
   {
@@ -392,6 +419,7 @@ const storefrontProducts = [
     bestFor: "Roadside attention, market days, launches, and public activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: FlagIcon,
   },
   {
@@ -401,6 +429,7 @@ const storefrontProducts = [
     bestFor: "Stage presence, worship spaces, and formal speaking environments.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: LayoutDashboard,
   },
   {
@@ -410,6 +439,7 @@ const storefrontProducts = [
     bestFor: "Banner finishing, mounting, and display durability.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
+    imageUrl: null,
     icon: PackageCheck,
   },
   {
@@ -419,6 +449,7 @@ const storefrontProducts = [
     bestFor: "Household use, trial orders, and reseller shelf testing.",
     href: serviceLinks.smartWash1Kg,
     cta: "WhatsApp Smart Wash Team",
+    imageUrl: null,
     icon: Droplets,
   },
   {
@@ -428,6 +459,7 @@ const storefrontProducts = [
     bestFor: "Repeat buyers, families, bulk interest, and reseller demand.",
     href: serviceLinks.smartWash2Kg,
     cta: "WhatsApp Smart Wash Team",
+    imageUrl: null,
     icon: Droplets,
   },
 ];
@@ -1020,10 +1052,21 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
           {proofWallCases.map((proofCase, index) => (
             <article key={proofCase.title} className="proof-wall-card">
+              <div className="proof-wall-media">
+                {proofCase.imageUrl ? (
+                  <img src={proofCase.imageUrl} alt={proofCase.title} />
+                ) : (
+                  <>
+                    <span className="card-icon">
+                      <proofCase.icon className="h-6 w-6" />
+                    </span>
+                    <span className="proof-wall-media-label">Real project photo ready</span>
+                  </>
+                )}
+              </div>
+
               <div className="flex items-start justify-between gap-4">
-                <span className="card-icon">
-                  <proofCase.icon className="h-6 w-6" />
-                </span>
+                <span className="proof-wall-tag">{proofCase.category}</span>
                 <span className="proof-wall-metric">{proofCase.metric}</span>
               </div>
 
@@ -1098,7 +1141,7 @@ export default function Home() {
             </div>
 
             <a
-              href={googleReviewsUrl}
+              href={VIEW_GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noreferrer"
               className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18"
@@ -1115,7 +1158,7 @@ export default function Home() {
                   <div>
                     <p className="font-display text-lg font-bold text-white">{review.name}</p>
                     <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">
-                      Google review placeholder
+                      {review.isPlaceholder ? "Placeholder review" : "Google review"}
                     </p>
                   </div>
                   <span className="rounded-full border border-red-300/25 bg-red-400/10 px-3 py-1 text-xs font-black text-red-100">
@@ -1613,9 +1656,22 @@ export default function Home() {
             <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {filteredStorefrontProducts.map((product) => (
                 <article key={product.name} className="storefront-card">
+                  <div className="storefront-media">
+                    {product.imageUrl ? (
+                      <img src={product.imageUrl} alt={product.name} />
+                    ) : (
+                      <>
+                        <span className="card-icon">
+                          <product.icon className="h-6 w-6" />
+                        </span>
+                        <span className="storefront-media-label">Product photo ready</span>
+                      </>
+                    )}
+                  </div>
+
                   <div className="flex items-start justify-between gap-4">
-                    <span className="card-icon">
-                      <product.icon className="h-6 w-6" />
+                    <span className="mt-1 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-zinc-300">
+                      {product.category}
                     </span>
                     <span className="storefront-route-chip">
                       {product.category === "Smart Wash"
@@ -1626,9 +1682,6 @@ export default function Home() {
                     </span>
                   </div>
 
-                  <span className="mt-7 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-zinc-300">
-                    {product.category}
-                  </span>
                   <h3 className="mt-4 font-display text-2xl font-bold text-white">
                     {product.name}
                   </h3>

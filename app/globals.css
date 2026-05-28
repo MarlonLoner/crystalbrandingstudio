@@ -396,6 +396,65 @@ button {
     0 24px 80px rgba(0, 0, 0, 0.42);
 }
 
+.proof-wall-media,
+.storefront-media {
+  position: relative;
+  display: grid;
+  min-height: 160px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(103, 232, 249, 0.14);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(103, 232, 249, 0.17), transparent 44%),
+    radial-gradient(circle at 82% 22%, rgba(255, 48, 79, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(0, 0, 0, 0.22);
+}
+
+.proof-wall-media {
+  margin-bottom: 18px;
+}
+
+.proof-wall-media::before,
+.storefront-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.36;
+}
+
+.proof-wall-media img,
+.storefront-media img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.proof-wall-media .card-icon,
+.storefront-media .card-icon,
+.proof-wall-media-label,
+.storefront-media-label {
+  position: relative;
+  z-index: 1;
+}
+
+.proof-wall-media-label,
+.storefront-media-label {
+  margin-top: 68px;
+  color: #a5f3fc;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .proof-wall-metric {
   border-radius: 999px;
   border: 1px solid rgba(255, 112, 133, 0.32);
@@ -560,6 +619,10 @@ button {
   min-height: 440px;
   display: flex;
   flex-direction: column;
+}
+
+.storefront-media {
+  margin-bottom: 18px;
 }
 
 .storefront-cta {
