@@ -82,6 +82,7 @@ const upgradeWhatsappLink = (upgradeName: string) =>
 const navItems = [
   ["Home", "#home"],
   ["Brand Upgrades", "#upgrades"],
+  ["Visibility Score", "#visibility-score"],
   ["Project Builder", "#project-builder"],
   ["POP OUT Gallery", "#gallery"],
   ["Upload Zone", "#upload"],
@@ -336,6 +337,63 @@ const whatWeNeed = [
   },
 ];
 
+const visibilityQuestions = [
+  {
+    prompt: "Do you have clear shopfront signage that is easy to notice from the road or walkway?",
+    area: "Shopfront signage",
+    recommendation: "Start with shopfront signage or a free POP OUT shopfront preview.",
+    icon: Store,
+  },
+  {
+    prompt: "Can people understand what your business sells within 3 seconds?",
+    area: "Offer clarity",
+    recommendation: "Clarify your storefront message, window graphics, and core offer.",
+    icon: ScanLine,
+  },
+  {
+    prompt: "Do you have a professional logo and consistent brand colors?",
+    area: "Brand identity",
+    recommendation: "Upgrade your logo, colors, and brand rollout assets.",
+    icon: Gem,
+  },
+  {
+    prompt: "Do you have a website or online store where customers can learn, enquire, or buy?",
+    area: "Website / online store",
+    recommendation: "Explore a website or online store build.",
+    icon: MonitorSmartphone,
+  },
+  {
+    prompt: "Do you capture leads through WhatsApp, forms, or a clear enquiry path?",
+    area: "Lead capture",
+    recommendation: "Build a WhatsApp or form-based lead generation system.",
+    icon: MessageCircle,
+  },
+  {
+    prompt: "Do you have a follow-up system for enquiries after people contact you?",
+    area: "Follow-up system",
+    recommendation: "Add a simple follow-up flow for enquiries and quotes.",
+    icon: BarChart3,
+  },
+  {
+    prompt: "Do you post consistent content, reviews, testimonials, or social proof?",
+    area: "Content / social proof",
+    recommendation: "Create a consistent content and social proof system.",
+    icon: Radio,
+  },
+  {
+    prompt: "Do you have branded photos or videos that make your business look professional?",
+    area: "Branded media",
+    recommendation: "Plan branded photos, videos, or Entrepreneurs Desk media visibility.",
+    icon: Camera,
+  },
+];
+
+const visibilityAnswerOptions = [
+  { label: "Strong", value: 1, copy: "This is already working well." },
+  { label: "Somewhat", value: 0.5, copy: "It exists, but needs improvement." },
+  { label: "Missing", value: 0, copy: "This is a weak area right now." },
+];
+
 const deskModules = [
   {
     title: "Founder Feature",
@@ -367,6 +425,9 @@ export default function Home() {
   const [selectedGoal, setSelectedGoal] = useState(projectTypes[0].goals[0]);
   const [selectedTimeline, setSelectedTimeline] = useState(timelineOptions[1]);
   const [selectedAssets, setSelectedAssets] = useState(assetOptions[0]);
+  const [visibilityAnswers, setVisibilityAnswers] = useState<number[]>(
+    Array(visibilityQuestions.length).fill(-1)
+  );
 
   const filters = useMemo(
     () => ["All", ...Array.from(new Set(galleryItems.map((item) => item.type)))],
@@ -377,6 +438,51 @@ export default function Home() {
     galleryFilter === "All"
       ? galleryItems
       : galleryItems.filter((item) => item.type === galleryFilter);
+
+  const answeredVisibilityCount = visibilityAnswers.filter((answer) => answer >= 0).length;
+  const visibilityScore = Math.round(
+    (visibilityAnswers.reduce(
+      (total, answer) => total + (answer >= 0 ? answer : 0),
+      0
+    ) /
+      visibilityQuestions.length) *
+      100
+  );
+  const visibilityComplete = answeredVisibilityCount === visibilityQuestions.length;
+  const visibilityLabel =
+    visibilityScore < 35
+      ? "Hidden"
+      : visibilityScore < 65
+        ? "Visible"
+        : visibilityScore < 85
+          ? "Popping Out"
+          : "Market Magnet";
+  const weakestVisibilityIndex = visibilityAnswers.findIndex((answer) => answer === 0);
+  const fallbackWeakIndex = visibilityAnswers.findIndex((answer) => answer === 0.5);
+  const recommendedVisibilityQuestion =
+    visibilityQuestions[
+      weakestVisibilityIndex >= 0
+        ? weakestVisibilityIndex
+        : fallbackWeakIndex >= 0
+          ? fallbackWeakIndex
+          : 0
+    ];
+  const visibilityRecommendation = visibilityComplete
+    ? visibilityScore >= 85
+      ? "You already have strong visibility. Next step: amplify with content, media, and campaign systems."
+      : recommendedVisibilityQuestion.recommendation
+    : "Complete all visibility signals to unlock your recommended upgrade.";
+  const visibilityWeakAreas = visibilityQuestions
+    .filter((_, index) => visibilityAnswers[index] >= 0 && visibilityAnswers[index] < 1)
+    .map((question) => question.area);
+  const visibilityScoreLink = makeWhatsAppLink(
+    `Hi Crystal Branding Studio, I completed the Brand Visibility Score quiz.
+Score: ${visibilityScore}%
+Label: ${visibilityLabel}
+Weak areas: ${visibilityWeakAreas.length ? visibilityWeakAreas.join(", ") : "No major weak areas selected"}
+Recommended upgrade: ${visibilityRecommendation}
+Please guide me on the next POP OUT upgrade.`
+  );
 
   const projectBuilderLink = makeWhatsAppLink(
     `Hi Crystal Branding Studio, I used the POP OUT Project Builder.
@@ -390,6 +496,12 @@ Please guide me on the next steps and quote.`
   const selectProjectType = (projectType: (typeof projectTypes)[number]) => {
     setSelectedProjectType(projectType);
     setSelectedGoal(projectType.goals[0]);
+  };
+
+  const updateVisibilityAnswer = (questionIndex: number, value: number) => {
+    setVisibilityAnswers((currentAnswers) =>
+      currentAnswers.map((answer, index) => (index === questionIndex ? value : answer))
+    );
   };
 
   return (
@@ -611,6 +723,129 @@ Please guide me on the next steps and quote.`
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="visibility-score" className="section-band">
+        <SectionHeader
+          eyebrow="Brand Visibility Score"
+          title="Find out how visible your brand feels before customers contact you."
+          copy="Answer the quick visibility signals and Crystal will recommend the next upgrade lane for your brand."
+        />
+
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+          <div className="score-quiz-panel">
+            <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+              <div>
+                <p className="builder-label">Visibility diagnostic</p>
+                <h3 className="mt-2 font-display text-2xl font-bold text-white">
+                  {answeredVisibilityCount} of {visibilityQuestions.length} signals scanned
+                </h3>
+              </div>
+              <div className="score-progress-shell">
+                <span
+                  className="score-progress-fill"
+                  style={{
+                    width: `${(answeredVisibilityCount / visibilityQuestions.length) * 100}%`,
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="grid gap-3">
+              {visibilityQuestions.map((question, questionIndex) => (
+                <article key={question.area} className="score-question">
+                  <div className="flex items-start gap-3">
+                    <span className="score-question-icon">
+                      <question.icon className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-100">
+                        {String(questionIndex + 1).padStart(2, "0")} / {question.area}
+                      </p>
+                      <h3 className="mt-2 text-sm font-bold leading-6 text-white sm:text-base">
+                        {question.prompt}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                    {visibilityAnswerOptions.map((option) => (
+                      <button
+                        key={option.label}
+                        type="button"
+                        onClick={() => updateVisibilityAnswer(questionIndex, option.value)}
+                        className={cn(
+                          "score-answer",
+                          visibilityAnswers[questionIndex] === option.value && "score-answer-active"
+                        )}
+                      >
+                        <span>{option.label}</span>
+                        <small>{option.copy}</small>
+                      </button>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <aside className="score-result-panel">
+            <div className="score-orbit">
+              <div className="score-orbit-ring" />
+              <div className="score-orbit-core">
+                <span>{visibilityComplete ? `${visibilityScore}%` : "--"}</span>
+                <small>Visibility score</small>
+              </div>
+            </div>
+
+            <div className="mt-8 flex items-center justify-between gap-3">
+              <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-cyan-100">
+                {visibilityComplete ? visibilityLabel : "Scanning"}
+              </span>
+              <Sparkles className="h-6 w-6 text-cyan-200" />
+            </div>
+
+            <h3 className="mt-6 font-display text-3xl font-bold text-white">
+              {visibilityComplete ? visibilityLabel : "Complete the score"}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-zinc-300">
+              {visibilityRecommendation}
+            </p>
+
+            <div className="mt-6 space-y-3">
+              <div className="summary-row">
+                <span>Weak areas</span>
+                <strong>
+                  {visibilityWeakAreas.length
+                    ? visibilityWeakAreas.join(", ")
+                    : visibilityComplete
+                      ? "No major weak areas selected"
+                      : "Answer all questions to reveal weak areas"}
+                </strong>
+              </div>
+              <div className="summary-row">
+                <span>Recommended upgrade</span>
+                <strong>{visibilityRecommendation}</strong>
+              </div>
+            </div>
+
+            <a
+              href={visibilityScoreLink}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                "mt-8 flex w-full items-center justify-center gap-2 rounded-md px-5 py-4 text-sm font-bold transition",
+                visibilityComplete
+                  ? "bg-white text-zinc-950 hover:bg-cyan-100"
+                  : "pointer-events-none border border-white/10 bg-white/5 text-zinc-500"
+              )}
+              aria-disabled={!visibilityComplete}
+            >
+              Send My Score On WhatsApp
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </aside>
         </div>
       </section>
 
