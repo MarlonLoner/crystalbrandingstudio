@@ -132,6 +132,14 @@ button {
   font-weight: 800;
 }
 
+.nav-scrollbar {
+  scrollbar-width: none;
+}
+
+.nav-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .metric-tile,
 .command-shell,
 .feature-card,
@@ -153,7 +161,11 @@ button {
 .score-quiz-panel,
 .score-result-panel,
 .score-question,
-.proof-wall-card {
+.proof-wall-card,
+.trust-signal-panel,
+.trust-review-card,
+.storefront-panel,
+.storefront-card {
   border: 1px solid rgba(255, 255, 255, 0.11);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
@@ -459,6 +471,118 @@ button {
 }
 
 .proof-wall-cta:hover {
+  border-color: rgba(255, 112, 133, 0.5);
+  background: rgba(255, 48, 79, 0.12);
+  transform: translateY(-1px);
+}
+
+.trust-signal-panel,
+.storefront-panel {
+  border-radius: 16px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.trust-signal-panel {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(103, 232, 249, 0.16), transparent 32%),
+    radial-gradient(circle at 88% 20%, rgba(255, 48, 79, 0.13), transparent 28%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+    rgba(8, 9, 11, 0.68);
+}
+
+.trust-review-card,
+.storefront-card {
+  border-radius: 12px;
+  padding: 22px;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.trust-review-card:hover,
+.storefront-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(103, 232, 249, 0.34);
+  box-shadow:
+    0 0 34px rgba(56, 232, 255, 0.12),
+    0 24px 72px rgba(0, 0, 0, 0.35);
+}
+
+.rating-chip,
+.storefront-route-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 112, 133, 0.3);
+  background: rgba(255, 48, 79, 0.1);
+  padding: 7px 10px;
+  color: #ffe4e9;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.storefront-filter {
+  min-height: 44px;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0 16px;
+  color: #d4d4d8;
+  font-size: 0.86rem;
+  font-weight: 800;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.storefront-filter:hover,
+.storefront-filter-active {
+  border-color: rgba(103, 232, 249, 0.45);
+  background: rgba(103, 232, 249, 0.12);
+  color: #ecfeff;
+  transform: translateY(-1px);
+}
+
+.storefront-card {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.storefront-cta {
+  margin-top: auto;
+  display: inline-flex;
+  min-height: 48px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 8px;
+  border: 1px solid rgba(103, 232, 249, 0.34);
+  background: rgba(103, 232, 249, 0.1);
+  color: #ecfeff;
+  font-size: 0.88rem;
+  font-weight: 900;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.storefront-cta:hover {
   border-color: rgba(255, 112, 133, 0.5);
   background: rgba(255, 48, 79, 0.12);
   transform: translateY(-1px);
@@ -1086,7 +1210,11 @@ button {
   .need-card,
   .score-quiz-panel,
   .score-result-panel,
-  .proof-wall-card {
+  .proof-wall-card,
+  .trust-signal-panel,
+  .trust-review-card,
+  .storefront-panel,
+  .storefront-card {
     padding: 18px;
   }
 

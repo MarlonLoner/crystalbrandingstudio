@@ -13,6 +13,7 @@ import {
   ExternalLink,
   Eye,
   Factory,
+  Flag as FlagIcon,
   Gem,
   Globe2,
   ImageUp,
@@ -29,6 +30,7 @@ import {
   ShieldCheck,
   ShoppingBag,
   Sparkles,
+  Star,
   Store,
   Target,
   WandSparkles,
@@ -83,9 +85,11 @@ const navItems = [
   ["Home", "#home"],
   ["Brand Upgrades", "#upgrades"],
   ["Proof Wall", "#proof-wall"],
+  ["Trust Signal", "#trust-signal"],
   ["Visibility Score", "#visibility-score"],
   ["Project Builder", "#project-builder"],
   ["POP OUT Gallery", "#gallery"],
+  ["Storefront", "#storefront"],
   ["Upload Zone", "#upload"],
   ["Smart Wash", "#smart-wash"],
   ["What We Need", "#what-we-need"],
@@ -261,6 +265,169 @@ const proofWallCases = [
     href: makeSmartWashWhatsAppLink(
       "Hi Crystal Branding Studio, I want a Crystal Smart Wash reseller push like the POP OUT Proof Wall example."
     ),
+    icon: Droplets,
+  },
+];
+
+const googleReviewsUrl = "https://www.google.com/search?q=Crystal+Branding+Studio+Google+Reviews";
+
+const trustReviews = [
+  {
+    name: "T. Moyo",
+    rating: 5,
+    text: "Placeholder Google review: Crystal made our storefront clearer and easier to notice from the road.",
+  },
+  {
+    name: "R. Ndlovu",
+    rating: 5,
+    text: "Placeholder Google review: Fast guidance, clean branding direction, and a clear path into the quote.",
+  },
+  {
+    name: "M. Chari",
+    rating: 5,
+    text: "Placeholder Google review: The signage concept helped our business feel more professional immediately.",
+  },
+  {
+    name: "K. Dube",
+    rating: 4,
+    text: "Placeholder Google review: Good communication and practical advice for print, display, and online visibility.",
+  },
+];
+
+const storefrontCategories = [
+  "Signage",
+  "Print & Display",
+  "Vehicle Branding",
+  "Accessories",
+  "Specialty",
+  "Smart Wash",
+];
+
+const storefrontProducts = [
+  {
+    name: "3D Shopfront Signage",
+    category: "Signage",
+    description: "Dimensional signage built to make the front of the business feel premium and visible.",
+    bestFor: "Shopfront authority, entrances, and high-trust brand presence.",
+    href: GROWTH_OS_SHOPFRONT_INTAKE,
+    cta: "Start Shopfront Intake",
+    icon: Gem,
+  },
+  {
+    name: "Lightbox Sign",
+    category: "Signage",
+    description: "Illuminated signage direction for stronger day and night visibility.",
+    bestFor: "Retail fronts, road-facing shops, and late-hour visibility.",
+    href: GROWTH_OS_SHOPFRONT_INTAKE,
+    cta: "Start Shopfront Intake",
+    icon: Lightbulb,
+  },
+  {
+    name: "Shopfront Banner",
+    category: "Signage",
+    description: "A fast storefront visibility upgrade for offers, launches, and frontage clarity.",
+    bestFor: "Quick shopfront campaigns and photo-based preview requests.",
+    href: GROWTH_OS_SHOPFRONT_INTAKE,
+    cta: "Upload Shopfront In Growth OS",
+    icon: ImageUp,
+  },
+  {
+    name: "Pull-Up Banner",
+    category: "Print & Display",
+    description: "Portable display signage for events, receptions, launches, and activations.",
+    bestFor: "Exhibitions, pop-ups, offices, and point-of-sale messaging.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: Megaphone,
+  },
+  {
+    name: "Teardrop Banner",
+    category: "Print & Display",
+    description: "Outdoor and event banner visibility with a bold moving display shape.",
+    bestFor: "Roadside promos, churches, launches, and outdoor activations.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: FlagIcon,
+  },
+  {
+    name: "Business Cards",
+    category: "Print & Display",
+    description: "Professional contact cards that keep your brand consistent after a meeting.",
+    bestFor: "Sales teams, founders, reps, and service businesses.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: BriefcaseBusiness,
+  },
+  {
+    name: "Flyers",
+    category: "Print & Display",
+    description: "Campaign-ready flyers for offers, openings, promotions, and awareness pushes.",
+    bestFor: "Local launches, promotions, and direct customer distribution.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: Megaphone,
+  },
+  {
+    name: "Stickers / Labels",
+    category: "Accessories",
+    description: "Labels and stickers for packaging, campaigns, products, and branded handouts.",
+    bestFor: "Product packaging, promos, and brand consistency.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: ScanLine,
+  },
+  {
+    name: "Vehicle Branding",
+    category: "Vehicle Branding",
+    description: "Graphics and decals that turn everyday movement into mobile brand visibility.",
+    bestFor: "Delivery vehicles, company cars, fleets, and field teams.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: Zap,
+  },
+  {
+    name: "Flags",
+    category: "Print & Display",
+    description: "High-visibility flag displays for events, outdoor promotions, and entrances.",
+    bestFor: "Roadside attention, market days, launches, and public activations.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: FlagIcon,
+  },
+  {
+    name: "Pulpits",
+    category: "Specialty",
+    description: "Custom branded pulpit direction for churches, events, and presentation spaces.",
+    bestFor: "Stage presence, worship spaces, and formal speaking environments.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: LayoutDashboard,
+  },
+  {
+    name: "Eyelets / Banner Accessories",
+    category: "Accessories",
+    description: "Finishing accessories that help banners install cleanly and hold better.",
+    bestFor: "Banner finishing, mounting, and display durability.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: PackageCheck,
+  },
+  {
+    name: "Crystal Smart Wash 1KG",
+    category: "Smart Wash",
+    description: "Crystal Smart Wash washing powder in a compact 1KG pack.",
+    bestFor: "Household use, trial orders, and reseller shelf testing.",
+    href: serviceLinks.smartWash1Kg,
+    cta: "WhatsApp Smart Wash Team",
+    icon: Droplets,
+  },
+  {
+    name: "Crystal Smart Wash 2KG",
+    category: "Smart Wash",
+    description: "Crystal Smart Wash washing powder in a larger 2KG value pack.",
+    bestFor: "Repeat buyers, families, bulk interest, and reseller demand.",
+    href: serviceLinks.smartWash2Kg,
+    cta: "WhatsApp Smart Wash Team",
     icon: Droplets,
   },
 ];
@@ -532,6 +699,7 @@ function cn(...classes: Array<string | false | undefined>) {
 export default function Home() {
   const [selectedUpgrade, setSelectedUpgrade] = useState(upgrades[0]);
   const [galleryFilter, setGalleryFilter] = useState("All");
+  const [storefrontCategory, setStorefrontCategory] = useState(storefrontCategories[0]);
   const [fileName, setFileName] = useState("No file selected");
   const [selectedSmartWashPack, setSelectedSmartWashPack] = useState(smartWashPacks[0]);
   const [selectedProjectType, setSelectedProjectType] = useState(projectTypes[0]);
@@ -551,6 +719,9 @@ export default function Home() {
     galleryFilter === "All"
       ? galleryItems
       : galleryItems.filter((item) => item.type === galleryFilter);
+  const filteredStorefrontProducts = storefrontProducts.filter(
+    (product) => product.category === storefrontCategory
+  );
 
   const answeredVisibilityCount = visibilityAnswers.filter((answer) => answer >= 0).length;
   const visibilityScore = Math.round(
@@ -645,7 +816,7 @@ export default function Home() {
             </span>
           </a>
 
-          <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.035] p-1 lg:flex">
+          <div className="nav-scrollbar hidden max-w-[min(62vw,840px)] items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/[0.035] p-1 lg:flex">
             {navItems.map(([label, href]) => (
               <a
                 key={label}
@@ -891,6 +1062,75 @@ export default function Home() {
               </a>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="trust-signal" className="section-band">
+        <SectionHeader
+          eyebrow="Live Trust Signal"
+          title="A placeholder Google review layer for visible social proof."
+          copy="These review cards can be replaced with live Google Business Profile reviews once access is available."
+        />
+
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
+          <aside className="trust-signal-panel">
+            <div className="flex items-start justify-between gap-4">
+              <span className="card-icon">
+                <ShieldCheck className="h-6 w-6" />
+              </span>
+              <span className="rating-chip">Google reviews placeholder</span>
+            </div>
+
+            <div className="mt-9">
+              <p className="font-display text-6xl font-black text-white">4.9</p>
+              <div className="mt-4 star-row">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} className="h-5 w-5 fill-cyan-200 text-cyan-200" />
+                ))}
+              </div>
+              <p className="mt-5 text-sm font-bold uppercase tracking-[0.18em] text-cyan-100">
+                128 reviews placeholder
+              </p>
+              <p className="mt-5 text-sm leading-7 text-zinc-400">
+                Use this panel as the live trust area for verified customer sentiment,
+                review count, and public confidence once the Google profile is connected.
+              </p>
+            </div>
+
+            <a
+              href={googleReviewsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18"
+            >
+              View Google Reviews
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </aside>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {trustReviews.map((review) => (
+              <article key={review.name} className="trust-review-card">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="font-display text-lg font-bold text-white">{review.name}</p>
+                    <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">
+                      Google review placeholder
+                    </p>
+                  </div>
+                  <span className="rounded-full border border-red-300/25 bg-red-400/10 px-3 py-1 text-xs font-black text-red-100">
+                    {review.rating}.0
+                  </span>
+                </div>
+                <div className="mt-5 star-row">
+                  {Array.from({ length: review.rating }).map((_, index) => (
+                    <Star key={index} className="h-4 w-4 fill-cyan-200 text-cyan-200" />
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-7 text-zinc-300">{review.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1329,6 +1569,92 @@ export default function Home() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="storefront" className="section-band border-y border-white/10 bg-white/[0.025]">
+        <SectionHeader
+          eyebrow="Crystal Storefront"
+          title="A showcase of visibility products without checkout friction."
+          copy="Browse signage, print, display, vehicle branding, accessories, specialty builds, and Crystal Smart Wash packs, then move into the right intake or WhatsApp path."
+        />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="storefront-panel">
+            <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+              <div>
+                <p className="builder-label">Product showcase</p>
+                <h3 className="mt-2 font-display text-2xl font-bold text-white">
+                  Select a category to reveal quote-ready product lanes.
+                </h3>
+              </div>
+              <div className="rounded-md border border-white/10 bg-black/20 px-4 py-3 text-sm text-zinc-400">
+                No cart. No payment checkout. Intake first.
+              </div>
+            </div>
+
+            <div className="mt-7 flex gap-2 overflow-x-auto pb-2">
+              {storefrontCategories.map((category) => (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setStorefrontCategory(category)}
+                  className={cn(
+                    "storefront-filter",
+                    storefrontCategory === category && "storefront-filter-active"
+                  )}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {filteredStorefrontProducts.map((product) => (
+                <article key={product.name} className="storefront-card">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="card-icon">
+                      <product.icon className="h-6 w-6" />
+                    </span>
+                    <span className="storefront-route-chip">
+                      {product.category === "Smart Wash"
+                        ? "Smart Wash WhatsApp"
+                        : product.href === GROWTH_OS_SHOPFRONT_INTAKE
+                          ? "Shopfront intake"
+                          : "Project intake"}
+                    </span>
+                  </div>
+
+                  <span className="mt-7 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-zinc-300">
+                    {product.category}
+                  </span>
+                  <h3 className="mt-4 font-display text-2xl font-bold text-white">
+                    {product.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-zinc-400">
+                    {product.description}
+                  </p>
+
+                  <div className="mt-5 rounded-md border border-white/10 bg-black/20 p-4">
+                    <span className="text-xs font-black uppercase tracking-[0.16em] text-cyan-100">
+                      Best for
+                    </span>
+                    <p className="mt-2 text-sm leading-6 text-zinc-300">{product.bestFor}</p>
+                  </div>
+
+                  <a
+                    href={product.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="storefront-cta"
+                  >
+                    {product.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
