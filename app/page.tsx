@@ -36,48 +36,48 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
-const whatsappNumber = "263776617821";
+const GROWTH_OS_GENERAL_INTAKE = "https://crystalgrowthos.vercel.app/intake";
+const GROWTH_OS_SHOPFRONT_INTAKE = "https://crystalgrowthos.vercel.app/intake/shopfront";
+const MAIN_WHATSAPP = "263776617821";
+const SMART_WASH_WHATSAPP = "263772338398";
 
-const makeWhatsAppLink = (message: string) =>
-  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+const makeWhatsAppLink = (phoneNumber: string, message: string) =>
+  `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+const makeMainWhatsAppLink = (message: string) => makeWhatsAppLink(MAIN_WHATSAPP, message);
+const makeSmartWashWhatsAppLink = (message: string) =>
+  makeWhatsAppLink(SMART_WASH_WHATSAPP, message);
 
 const serviceLinks = {
-  branding: makeWhatsAppLink(
-    "Hi Crystal Branding Studio, I need signage/branding help for my business. Please guide me on the best POP OUT upgrade."
+  generalIntake: GROWTH_OS_GENERAL_INTAKE,
+  shopfrontIntake: GROWTH_OS_SHOPFRONT_INTAKE,
+  quickContact: makeMainWhatsAppLink(
+    "Hi Crystal Branding Studio, I want to contact the team quickly."
   ),
-  shopfrontPreview: makeWhatsAppLink(
-    "Hi Crystal Branding Studio, I want to upload my shopfront for a free POP OUT preview."
-  ),
-  digitalSystems: makeWhatsAppLink(
-    "Hi Crystal Branding Studio, I want to explore digital systems for my business, including website, WhatsApp, social media, and lead generation support."
-  ),
-  smartWash: makeWhatsAppLink(
+  smartWash: makeSmartWashWhatsAppLink(
     "Hi Crystal Branding Studio, I want Crystal Smart Wash washing powder details."
   ),
-  smartWash1Kg: makeWhatsAppLink(
+  smartWash1Kg: makeSmartWashWhatsAppLink(
     "Hi Crystal Branding Studio, I want to order Crystal Smart Wash washing powder in the 1KG pack."
   ),
-  smartWash2Kg: makeWhatsAppLink(
+  smartWash2Kg: makeSmartWashWhatsAppLink(
     "Hi Crystal Branding Studio, I want to order Crystal Smart Wash washing powder in the 2KG pack."
   ),
-  smartWashReseller: makeWhatsAppLink(
+  smartWashReseller: makeSmartWashWhatsAppLink(
     "Hi Crystal Branding Studio, I want to ask about Crystal Smart Wash reseller pricing."
   ),
-  smartWashBulk: makeWhatsAppLink(
+  smartWashBulk: makeSmartWashWhatsAppLink(
     "Hi Crystal Branding Studio, I want to request a Crystal Smart Wash bulk order quote."
   ),
-  entrepreneursDesk: makeWhatsAppLink(
+  entrepreneursDesk: makeMainWhatsAppLink(
     "Hi Crystal Branding Studio, I want to enter Entrepreneurs Desk for media visibility."
-  ),
-  generalQuote: makeWhatsAppLink(
-    "Hi Crystal Branding Studio, I need a general quote for my brand visibility project."
   ),
 };
 
 const upgradeWhatsappLink = (upgradeName: string) =>
-  makeWhatsAppLink(
-    `Hi Crystal Branding Studio, I need signage/branding help. I am interested in ${upgradeName}. Please guide me on the best POP OUT upgrade.`
-  );
+  upgradeName.toLowerCase().includes("shopfront")
+    ? GROWTH_OS_SHOPFRONT_INTAKE
+    : GROWTH_OS_GENERAL_INTAKE;
 
 const navItems = [
   ["Home", "#home"],
@@ -208,9 +208,7 @@ const proofWallCases = [
     solution: "Crystal mapped a bolder fascia, clearer window message, and a stronger front-view POP OUT preview.",
     result: "Before: easy to miss. After: clearer walk-in signal and quote-ready signage direction.",
     metric: "+72% street presence",
-    href: makeWhatsAppLink(
-      "Hi Crystal Branding Studio, I want a shopfront visibility upgrade like the POP OUT Proof Wall example."
-    ),
+    href: GROWTH_OS_SHOPFRONT_INTAKE,
     icon: Store,
   },
   {
@@ -220,9 +218,7 @@ const proofWallCases = [
     solution: "Crystal shaped a 3D signage direction with stronger depth, contrast, lighting, and brand authority.",
     result: "Before: flat and forgettable. After: premium entrance presence with stronger recognition.",
     metric: "Premium authority",
-    href: makeWhatsAppLink(
-      "Hi Crystal Branding Studio, I want a 3D signage authority upgrade like the POP OUT Proof Wall example."
-    ),
+    href: GROWTH_OS_SHOPFRONT_INTAKE,
     icon: Gem,
   },
   {
@@ -232,9 +228,7 @@ const proofWallCases = [
     solution: "Crystal planned vehicle graphics with clear services, contact points, and road-readable branding.",
     result: "Before: transport only. After: mobile advertising that keeps working during daily routes.",
     metric: "Route-ready ads",
-    href: makeWhatsAppLink(
-      "Hi Crystal Branding Studio, I want a vehicle branding upgrade like the POP OUT Proof Wall example."
-    ),
+    href: GROWTH_OS_GENERAL_INTAKE,
     icon: Zap,
   },
   {
@@ -244,9 +238,7 @@ const proofWallCases = [
     solution: "Crystal clarified the offer, designed bold campaign graphics, and prepared print-ready banner assets.",
     result: "Before: scattered promotion. After: focused campaign message for events, roadsides, and retail points.",
     metric: "Campaign-ready",
-    href: makeWhatsAppLink(
-      "Hi Crystal Branding Studio, I want a banner campaign upgrade like the POP OUT Proof Wall example."
-    ),
+    href: GROWTH_OS_GENERAL_INTAKE,
     icon: Megaphone,
   },
   {
@@ -256,9 +248,7 @@ const proofWallCases = [
     solution: "Crystal connected a landing page, WhatsApp CTA, lead path, and simple follow-up structure.",
     result: "Before: attention leaked. After: a clearer enquiry system built for quote requests and follow-up.",
     metric: "Lead path live",
-    href: makeWhatsAppLink(
-      "Hi Crystal Branding Studio, I want a digital lead system like the POP OUT Proof Wall example."
-    ),
+    href: GROWTH_OS_GENERAL_INTAKE,
     icon: MonitorSmartphone,
   },
   {
@@ -268,7 +258,7 @@ const proofWallCases = [
     solution: "Crystal positioned Crystal Smart Wash as a focused washing powder offer with order, reseller, and bulk CTAs.",
     result: "Before: unclear product inquiry. After: 1KG, 2KG, reseller pricing, and bulk order paths.",
     metric: "1KG / 2KG focus",
-    href: makeWhatsAppLink(
+    href: makeSmartWashWhatsAppLink(
       "Hi Crystal Branding Studio, I want a Crystal Smart Wash reseller push like the POP OUT Proof Wall example."
     ),
     icon: Droplets,
@@ -323,6 +313,7 @@ const smartWashPacks = [
 ];
 
 const smartWashActions = [
+  { label: "WhatsApp Smart Wash Team", href: serviceLinks.smartWash, icon: MessageCircle },
   { label: "Order 1KG", href: serviceLinks.smartWash1Kg, icon: ShoppingBag },
   { label: "Order 2KG", href: serviceLinks.smartWash2Kg, icon: PackageCheck },
   { label: "Ask About Reseller Pricing", href: serviceLinks.smartWashReseller, icon: BadgeDollarSign },
@@ -470,6 +461,52 @@ const visibilityAnswerOptions = [
   { label: "Missing", value: 0, copy: "This is a weak area right now." },
 ];
 
+const visibilityDimensions = [
+  { label: "Street Visibility", value: "Shopfront", icon: Store },
+  { label: "Brand Clarity", value: "3-sec test", icon: ScanLine },
+  { label: "Digital Presence", value: "Web/store", icon: MonitorSmartphone },
+  { label: "Lead Capture", value: "WhatsApp/forms", icon: MessageCircle },
+  { label: "Follow-Up", value: "Quote flow", icon: BarChart3 },
+  { label: "Social Proof", value: "Content/media", icon: Radio },
+];
+
+const assetHeavyProjectTypes = new Set(["Shopfront Signage", "3D Signage"]);
+
+const projectBuilderHref = (
+  projectType: string,
+  selectedGoal: string,
+  selectedTimeline: string,
+  selectedAssets: string
+) => {
+  if (assetHeavyProjectTypes.has(projectType)) {
+    return GROWTH_OS_SHOPFRONT_INTAKE;
+  }
+
+  if (projectType === "Smart Wash Order") {
+    return makeSmartWashWhatsAppLink(
+      `Hi Crystal Smart Wash team, I used the POP OUT Project Builder.
+Project type: ${projectType}
+Goal: ${selectedGoal}
+Timeline: ${selectedTimeline}
+Logo/assets: ${selectedAssets}
+Please guide me on the next Smart Wash step.`
+    );
+  }
+
+  if (projectType === "Entrepreneurs Desk Inquiry") {
+    return makeMainWhatsAppLink(
+      `Hi Crystal Branding Studio, I used the POP OUT Project Builder.
+Project type: ${projectType}
+Goal: ${selectedGoal}
+Timeline: ${selectedTimeline}
+Logo/assets: ${selectedAssets}
+Please guide me on Entrepreneurs Desk.`
+    );
+  }
+
+  return GROWTH_OS_GENERAL_INTAKE;
+};
+
 const deskModules = [
   {
     title: "Founder Feature",
@@ -551,23 +588,27 @@ export default function Home() {
   const visibilityWeakAreas = visibilityQuestions
     .filter((_, index) => visibilityAnswers[index] >= 0 && visibilityAnswers[index] < 1)
     .map((question) => question.area);
-  const visibilityScoreLink = makeWhatsAppLink(
-    `Hi Crystal Branding Studio, I completed the Brand Visibility Score quiz.
-Score: ${visibilityScore}%
-Label: ${visibilityLabel}
-Weak areas: ${visibilityWeakAreas.length ? visibilityWeakAreas.join(", ") : "No major weak areas selected"}
-Recommended upgrade: ${visibilityRecommendation}
-Please guide me on the next POP OUT upgrade.`
-  );
+  const visibilityScoreLink =
+    visibilityComplete &&
+    (visibilityRecommendation.toLowerCase().includes("shopfront") ||
+      visibilityRecommendation.toLowerCase().includes("signage"))
+      ? GROWTH_OS_SHOPFRONT_INTAKE
+      : GROWTH_OS_GENERAL_INTAKE;
 
-  const projectBuilderLink = makeWhatsAppLink(
-    `Hi Crystal Branding Studio, I used the POP OUT Project Builder.
-Project type: ${selectedProjectType.name}
-Goal: ${selectedGoal}
-Timeline: ${selectedTimeline}
-Logo/assets: ${selectedAssets}
-Please guide me on the next steps and quote.`
+  const projectBuilderLink = projectBuilderHref(
+    selectedProjectType.name,
+    selectedGoal,
+    selectedTimeline,
+    selectedAssets
   );
+  const projectBuilderCtaLabel =
+    selectedProjectType.name === "Smart Wash Order"
+      ? "WhatsApp Smart Wash Team"
+      : selectedProjectType.name === "Entrepreneurs Desk Inquiry"
+        ? "Contact Entrepreneurs Desk"
+        : assetHeavyProjectTypes.has(selectedProjectType.name)
+          ? "Start Shopfront Intake"
+          : "Start Project Intake";
 
   const selectProjectType = (projectType: (typeof projectTypes)[number]) => {
     setSelectedProjectType(projectType);
@@ -617,7 +658,7 @@ Please guide me on the next steps and quote.`
           </div>
 
           <a
-            href={serviceLinks.generalQuote}
+            href={serviceLinks.quickContact}
             className="inline-flex h-10 items-center gap-2 rounded-full border border-cyan-300/35 bg-cyan-300/10 px-4 text-sm font-semibold text-cyan-100 shadow-[0_0_26px_rgba(0,229,255,0.18)] transition hover:border-cyan-200 hover:bg-cyan-300/18"
             target="_blank"
             rel="noreferrer"
@@ -649,13 +690,13 @@ Please guide me on the next steps and quote.`
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={serviceLinks.branding} target="_blank" rel="noreferrer" className="btn-primary">
+              <a href={GROWTH_OS_GENERAL_INTAKE} target="_blank" rel="noreferrer" className="btn-primary">
                 <Sparkles className="h-5 w-5" />
-                Start Brand Upgrade
+                Start Project Intake
               </a>
-              <a href="#upload" className="btn-secondary">
+              <a href={GROWTH_OS_SHOPFRONT_INTAKE} target="_blank" rel="noreferrer" className="btn-secondary">
                 <ImageUp className="h-5 w-5" />
-                Upload Shopfront For Free Preview
+                Upload Shopfront In Growth OS
               </a>
             </div>
 
@@ -696,12 +737,12 @@ Please guide me on the next steps and quote.`
                     Live Brand Radar
                   </p>
                   <h2 className="mt-1 font-display text-2xl font-bold text-white">
-                    Upgrade Console
+                    Visibility Score Companion
                   </h2>
                 </div>
                 <div className="signal-chip">
                   <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_#67e8f9]" />
-                  Online
+                  Score-ready
                 </div>
               </div>
 
@@ -720,35 +761,27 @@ Please guide me on the next steps and quote.`
                 </div>
 
                 <div className="space-y-3">
-                  {upgrades.slice(0, 3).map((upgrade) => (
-                    <button
-                      key={upgrade.name}
-                      type="button"
-                      onClick={() => setSelectedUpgrade(upgrade)}
-                      className={cn(
-                        "mini-module",
-                        selectedUpgrade.name === upgrade.name && "mini-module-active"
-                      )}
-                    >
-                      <upgrade.icon className="h-5 w-5" />
+                  {visibilityDimensions.map((dimension) => (
+                    <div key={dimension.label} className="mini-module">
+                      <dimension.icon className="h-5 w-5" />
                       <span className="min-w-0 text-left">
                         <span className="block truncate font-semibold text-white">
-                          {upgrade.name}
+                          {dimension.label}
                         </span>
                         <span className="block truncate text-xs text-zinc-500">
-                          {upgrade.signal}
+                          {dimension.value}
                         </span>
                       </span>
-                    </button>
+                    </div>
                   ))}
                 </div>
               </div>
 
               <div className="mt-5 grid gap-4 md:grid-cols-3">
                 {[
-                  { label: "Shopfront Scan", icon: Camera, value: "Ready" },
-                  { label: "Signage Quote", icon: BadgeDollarSign, value: "Queued" },
-                  { label: "Media Boost", icon: Radio, value: "Open" },
+                  { label: "Street Visibility", icon: Store, value: "Check" },
+                  { label: "Lead Capture", icon: MessageCircle, value: "Check" },
+                  { label: "Social Proof", icon: Radio, value: "Check" },
                 ].map((item) => (
                   <div key={item.label} className="status-module">
                     <item.icon className="h-5 w-5 text-cyan-200" />
@@ -757,6 +790,10 @@ Please guide me on the next steps and quote.`
                   </div>
                 ))}
               </div>
+              <a href="#visibility-score" className="mt-5 flex w-full items-center justify-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18">
+                Run Visibility Score
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -973,7 +1010,7 @@ Please guide me on the next steps and quote.`
               )}
               aria-disabled={!visibilityComplete}
             >
-              Send My Score On WhatsApp
+              {visibilityComplete ? "Start Recommended Intake" : "Run Visibility Score"}
               <ArrowRight className="h-4 w-4" />
             </a>
           </aside>
@@ -984,7 +1021,7 @@ Please guide me on the next steps and quote.`
         <SectionHeader
           eyebrow="POP OUT Project Builder"
           title="Build a focused brief before you ask for a quote."
-          copy="Choose the project lane, goal, timeline, and asset readiness. Crystal turns your answers into a WhatsApp-ready brief."
+          copy="Choose the project lane, goal, timeline, and asset readiness. Crystal routes you to the right Growth OS intake or specialist WhatsApp team."
         />
 
         <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
@@ -1094,7 +1131,7 @@ Please guide me on the next steps and quote.`
               rel="noreferrer"
               className="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-4 text-sm font-bold text-zinc-950 transition hover:bg-cyan-100"
             >
-              Send Project Brief On WhatsApp
+              {projectBuilderCtaLabel}
               <ArrowRight className="h-4 w-4" />
             </a>
           </aside>
@@ -1161,7 +1198,9 @@ Please guide me on the next steps and quote.`
               )}
             </div>
             <a href={upgradeWhatsappLink(selectedUpgrade.name)} target="_blank" rel="noreferrer" className="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-4 text-sm font-bold text-zinc-950 transition hover:bg-cyan-100">
-              Start Brand Upgrade
+              {selectedUpgrade.name.toLowerCase().includes("shopfront")
+                ? "Start Shopfront Intake"
+                : "Start Project Intake"}
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -1185,7 +1224,7 @@ Please guide me on the next steps and quote.`
                 "Free first-look preview",
                 "Signage direction",
                 "Brand upgrade notes",
-                "WhatsApp quote path",
+                "Growth OS intake path",
               ].map((item) => (
                 <div key={item} className="requirement-pill">
                   <Check className="h-4 w-4" />
@@ -1214,7 +1253,7 @@ Please guide me on the next steps and quote.`
                 Free POP OUT preview starts here
               </span>
               <span className="max-w-md text-center text-sm leading-6 text-zinc-400">
-                Upload your shopfront for a free POP OUT preview. JPG, PNG, or WebP stays in your browser until you send the WhatsApp request.
+                Upload your shopfront for a free POP OUT preview. JPG, PNG, WebP, logos, and project assets go straight into the Growth OS intake.
               </span>
               <input
                 type="file"
@@ -1233,12 +1272,12 @@ Please guide me on the next steps and quote.`
                 <p className="mt-2 truncate font-semibold text-white">{fileName}</p>
               </div>
               <a
-                href={serviceLinks.shopfrontPreview}
+                href={GROWTH_OS_SHOPFRONT_INTAKE}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-red-300/35 bg-red-400/12 px-5 py-4 text-sm font-bold text-red-50 transition hover:bg-red-400/20"
               >
-                Upload Shopfront For Free Preview
+                Upload Shopfront In Growth OS
                 <ExternalLink className="h-4 w-4" />
               </a>
             </div>
@@ -1322,7 +1361,7 @@ Please guide me on the next steps and quote.`
             <p className="section-copy">
               Pair your physical brand upgrade with conversion-ready web, WhatsApp, content, and map visibility systems.
             </p>
-            <a href={serviceLinks.digitalSystems} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18">
+            <a href={GROWTH_OS_GENERAL_INTAKE} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18">
               Explore Digital Systems
               <ArrowRight className="h-4 w-4" />
             </a>
@@ -1455,7 +1494,7 @@ Please guide me on the next steps and quote.`
               <h3 className="mt-6 font-display text-2xl font-bold text-white">{module.title}</h3>
               <p className="mt-4 text-sm leading-6 text-zinc-400">{module.copy}</p>
               <a href={serviceLinks.entrepreneursDesk} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-cyan-100">
-                Enter Entrepreneurs Desk
+                Contact Entrepreneurs Desk
                 <ArrowRight className="h-4 w-4" />
               </a>
             </article>
@@ -1477,13 +1516,13 @@ Please guide me on the next steps and quote.`
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0">
-            <a href="#project-builder" className="btn-primary">
+            <a href={GROWTH_OS_GENERAL_INTAKE} target="_blank" rel="noreferrer" className="btn-primary">
               <MessageCircle className="h-5 w-5" />
-              Build Project Brief
+              Start Project Intake
             </a>
-            <a href={serviceLinks.generalQuote} target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href="#visibility-score" className="btn-secondary">
               <CloudUpload className="h-5 w-5" />
-              Request General Quote
+              Run Visibility Score
             </a>
           </div>
         </div>
