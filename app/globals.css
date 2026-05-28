@@ -144,6 +144,8 @@ button {
 .command-shell,
 .feature-card,
 .insight-panel,
+.featured-store-panel,
+.featured-store-card,
 .upload-console,
 .gallery-card,
 .ecosystem-card,
@@ -189,7 +191,8 @@ button {
   overflow: hidden;
 }
 
-.command-shell::before {
+.command-shell::before,
+.featured-store-panel::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -201,6 +204,116 @@ button {
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   padding: 1px;
+}
+
+.featured-store-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.featured-store-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-store-card {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  border-radius: 10px;
+  padding: 15px;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.featured-store-card:hover {
+  transform: translateX(3px);
+  border-color: rgba(103, 232, 249, 0.38);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(103, 232, 249, 0.12), transparent 36%),
+    rgba(255, 255, 255, 0.055);
+  box-shadow: 0 0 30px rgba(56, 232, 255, 0.1);
+}
+
+.featured-store-card-red:hover {
+  border-color: rgba(255, 112, 133, 0.42);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 48, 79, 0.12), transparent 36%),
+    rgba(255, 255, 255, 0.055);
+  box-shadow: 0 0 30px rgba(255, 48, 79, 0.1);
+}
+
+.featured-store-index {
+  color: #67e8f9;
+  font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.featured-store-icon {
+  display: grid;
+  height: 44px;
+  width: 44px;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid rgba(103, 232, 249, 0.28);
+  background: rgba(103, 232, 249, 0.09);
+  color: #cffafe;
+}
+
+.featured-store-card-red .featured-store-icon {
+  border-color: rgba(255, 112, 133, 0.3);
+  background: rgba(255, 48, 79, 0.1);
+  color: #ffe4e9;
+}
+
+.featured-store-category {
+  color: #a5f3fc;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.featured-store-cta {
+  grid-column: 3;
+  display: inline-flex;
+  min-height: 38px;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(103, 232, 249, 0.28);
+  background: rgba(103, 232, 249, 0.09);
+  padding: 0 12px;
+  color: #ecfeff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.featured-store-cta:hover {
+  border-color: rgba(255, 112, 133, 0.42);
+  background: rgba(255, 48, 79, 0.1);
+}
+
+.featured-store-mini {
+  display: grid;
+  gap: 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 13px;
 }
 
 .signal-chip {
@@ -235,6 +348,19 @@ button {
   height: min(260px, 70vw);
   width: min(260px, 70vw);
   place-items: center;
+}
+
+.radar-companion-shell {
+  padding: 18px;
+}
+
+.radar-panel-compact {
+  min-height: 220px;
+}
+
+.radar-core-compact {
+  height: min(170px, 52vw);
+  width: min(170px, 52vw);
 }
 
 .radar-ring,
@@ -317,6 +443,11 @@ button {
     border-color 180ms ease,
     background 180ms ease,
     transform 180ms ease;
+}
+
+.mini-module-compact {
+  min-height: 44px;
+  padding: 10px 12px;
 }
 
 .mini-module:hover,
@@ -1259,12 +1390,14 @@ button {
   #home > div > div,
   #home h1,
   #home p,
-  #home .command-shell {
+  #home .featured-store-panel {
     width: calc(100vw - 32px);
     max-width: calc(100vw - 32px);
   }
 
   .command-shell,
+  .featured-store-panel,
+  .featured-store-card,
   .insight-panel,
   .upload-console,
   .lab-panel,
@@ -1287,6 +1420,23 @@ button {
 
   .radar-panel {
     min-height: 250px;
+  }
+
+  .radar-panel-compact {
+    min-height: 190px;
+  }
+
+  .featured-store-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .featured-store-index {
+    display: none;
+  }
+
+  .featured-store-cta {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .metric-tile {

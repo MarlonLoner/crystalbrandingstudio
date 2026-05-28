@@ -36,7 +36,7 @@ import {
   WandSparkles,
   Zap,
 } from "lucide-react";
-import { useMemo, useState } from "react";
+import { type ComponentType, useMemo, useState } from "react";
 
 const GROWTH_OS_GENERAL_INTAKE = "https://crystalgrowthos.vercel.app/intake";
 const GROWTH_OS_SHOPFRONT_INTAKE = "https://crystalgrowthos.vercel.app/intake/shopfront";
@@ -206,6 +206,8 @@ const trustStatements = [
 
 // Replace these placeholder cases with real Crystal projects: client/project name, category,
 // before problem, Crystal solution, measurable result, real photo URL, and the correct CTA route.
+// Drop real proof images into public/images/proof and keep each imageUrl filename in sync.
+// After adding real images, commit and push so the deployed app can serve them.
 const proofWallCases = [
   {
     title: "Shopfront Visibility Upgrade",
@@ -215,7 +217,7 @@ const proofWallCases = [
     result: "Before: easy to miss. After: clearer walk-in signal and quote-ready signage direction.",
     metric: "+72% street presence",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
-    imageUrl: null,
+    imageUrl: "/images/proof/shopfront-visibility-upgrade.jpg",
     icon: Store,
   },
   {
@@ -226,7 +228,7 @@ const proofWallCases = [
     result: "Before: flat and forgettable. After: premium entrance presence with stronger recognition.",
     metric: "Premium authority",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
-    imageUrl: null,
+    imageUrl: "/images/proof/3d-signage-authority-upgrade.jpg",
     icon: Gem,
   },
   {
@@ -237,7 +239,7 @@ const proofWallCases = [
     result: "Before: transport only. After: mobile advertising that keeps working during daily routes.",
     metric: "Route-ready ads",
     href: GROWTH_OS_GENERAL_INTAKE,
-    imageUrl: null,
+    imageUrl: "/images/proof/vehicle-branding-upgrade.jpg",
     icon: Zap,
   },
   {
@@ -248,7 +250,7 @@ const proofWallCases = [
     result: "Before: scattered promotion. After: focused campaign message for events, roadsides, and retail points.",
     metric: "Campaign-ready",
     href: GROWTH_OS_GENERAL_INTAKE,
-    imageUrl: null,
+    imageUrl: "/images/proof/banner-campaign-upgrade.jpg",
     icon: Megaphone,
   },
   {
@@ -259,7 +261,7 @@ const proofWallCases = [
     result: "Before: attention leaked. After: a clearer enquiry system built for quote requests and follow-up.",
     metric: "Lead path live",
     href: GROWTH_OS_GENERAL_INTAKE,
-    imageUrl: null,
+    imageUrl: "/images/proof/digital-lead-system.jpg",
     icon: MonitorSmartphone,
   },
   {
@@ -272,7 +274,7 @@ const proofWallCases = [
     href: makeSmartWashWhatsAppLink(
       "Hi Crystal Branding Studio, I want a Crystal Smart Wash reseller push like the POP OUT Proof Wall example."
     ),
-    imageUrl: null,
+    imageUrl: "/images/proof/smart-wash-reseller-push.jpg",
     icon: Droplets,
   },
 ];
@@ -321,6 +323,8 @@ const storefrontCategories = [
 
 // Replace these placeholder products with Crystal's real product catalogue details:
 // product photos, descriptions, ideal use cases, categories, and the correct intake or WhatsApp CTA.
+// Drop real product photos into public/images/storefront or public/images/smart-wash and keep
+// each imageUrl filename in sync. After adding images, commit and push to deploy them.
 const storefrontProducts = [
   {
     name: "3D Shopfront Signage",
@@ -329,7 +333,7 @@ const storefrontProducts = [
     bestFor: "Shopfront authority, entrances, and high-trust brand presence.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
     cta: "Start Shopfront Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/3d-shopfront-signage.jpg",
     icon: Gem,
   },
   {
@@ -339,7 +343,7 @@ const storefrontProducts = [
     bestFor: "Retail fronts, road-facing shops, and late-hour visibility.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
     cta: "Start Shopfront Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/lightbox-sign.jpg",
     icon: Lightbulb,
   },
   {
@@ -349,7 +353,7 @@ const storefrontProducts = [
     bestFor: "Quick shopfront campaigns and photo-based preview requests.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
     cta: "Upload Shopfront In Growth OS",
-    imageUrl: null,
+    imageUrl: "/images/storefront/shopfront-banner.jpg",
     icon: ImageUp,
   },
   {
@@ -359,7 +363,7 @@ const storefrontProducts = [
     bestFor: "Exhibitions, pop-ups, offices, and point-of-sale messaging.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/pull-up-banner.jpg",
     icon: Megaphone,
   },
   {
@@ -369,7 +373,7 @@ const storefrontProducts = [
     bestFor: "Roadside promos, churches, launches, and outdoor activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/teardrop-banner.jpg",
     icon: FlagIcon,
   },
   {
@@ -379,7 +383,7 @@ const storefrontProducts = [
     bestFor: "Sales teams, founders, reps, and service businesses.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/business-cards.jpg",
     icon: BriefcaseBusiness,
   },
   {
@@ -389,7 +393,7 @@ const storefrontProducts = [
     bestFor: "Local launches, promotions, and direct customer distribution.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/flyers.jpg",
     icon: Megaphone,
   },
   {
@@ -399,7 +403,7 @@ const storefrontProducts = [
     bestFor: "Product packaging, promos, and brand consistency.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/stickers-labels.jpg",
     icon: ScanLine,
   },
   {
@@ -409,7 +413,7 @@ const storefrontProducts = [
     bestFor: "Delivery vehicles, company cars, fleets, and field teams.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/vehicle-branding.jpg",
     icon: Zap,
   },
   {
@@ -419,7 +423,7 @@ const storefrontProducts = [
     bestFor: "Roadside attention, market days, launches, and public activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/flags.jpg",
     icon: FlagIcon,
   },
   {
@@ -429,7 +433,7 @@ const storefrontProducts = [
     bestFor: "Stage presence, worship spaces, and formal speaking environments.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/pulpits.jpg",
     icon: LayoutDashboard,
   },
   {
@@ -439,7 +443,7 @@ const storefrontProducts = [
     bestFor: "Banner finishing, mounting, and display durability.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: null,
+    imageUrl: "/images/storefront/eyelets-banner-accessories.jpg",
     icon: PackageCheck,
   },
   {
@@ -449,7 +453,7 @@ const storefrontProducts = [
     bestFor: "Household use, trial orders, and reseller shelf testing.",
     href: serviceLinks.smartWash1Kg,
     cta: "WhatsApp Smart Wash Team",
-    imageUrl: null,
+    imageUrl: "/images/smart-wash/smart-wash-1kg.png",
     icon: Droplets,
   },
   {
@@ -459,8 +463,47 @@ const storefrontProducts = [
     bestFor: "Repeat buyers, families, bulk interest, and reseller demand.",
     href: serviceLinks.smartWash2Kg,
     cta: "WhatsApp Smart Wash Team",
-    imageUrl: null,
+    imageUrl: "/images/smart-wash/smart-wash-2kg.png",
     icon: Droplets,
+  },
+];
+
+const featuredStoreItems = [
+  {
+    name: "3D Shopfront Signage",
+    category: "Premium signage",
+    benefit: "Make your storefront look more visible, dimensional, and high-trust.",
+    href: GROWTH_OS_SHOPFRONT_INTAKE,
+    cta: "Start Shopfront Intake",
+    icon: Gem,
+    accent: "cyan",
+  },
+  {
+    name: "Pull-Up Banners",
+    category: "Print & Display",
+    benefit: "Launch events, promos, and reception messages with portable visibility.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: Megaphone,
+    accent: "red",
+  },
+  {
+    name: "Vehicle Branding",
+    category: "Mobile visibility",
+    benefit: "Turn daily movement into a clean advertising signal for your business.",
+    href: GROWTH_OS_GENERAL_INTAKE,
+    cta: "Start Project Intake",
+    icon: Zap,
+    accent: "cyan",
+  },
+  {
+    name: "Crystal Smart Wash 1KG / 2KG",
+    category: "Smart Wash",
+    benefit: "Ask about washing powder orders, reseller pricing, or bulk supply.",
+    href: serviceLinks.smartWash,
+    cta: "WhatsApp Smart Wash Team",
+    icon: Droplets,
+    accent: "red",
   },
 ];
 
@@ -728,6 +771,40 @@ function cn(...classes: Array<string | false | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
+function EvidenceImage({
+  imageUrl,
+  title,
+  icon: Icon,
+  label,
+  mediaClassName,
+  labelClassName,
+}: {
+  imageUrl: string;
+  title: string;
+  icon: ComponentType<{ className?: string }>;
+  label: string;
+  mediaClassName: string;
+  labelClassName: string;
+}) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const shouldShowImage = imageUrl && !imageFailed;
+
+  return (
+    <div className={mediaClassName}>
+      {shouldShowImage ? (
+        <img src={imageUrl} alt={title} onError={() => setImageFailed(true)} />
+      ) : (
+        <>
+          <span className="card-icon">
+            <Icon className="h-6 w-6" />
+          </span>
+          <span className={labelClassName}>{label}</span>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [selectedUpgrade, setSelectedUpgrade] = useState(upgrades[0]);
   const [galleryFilter, setGalleryFilter] = useState("All");
@@ -933,68 +1010,69 @@ export default function Home() {
           </div>
 
           <div className="relative min-w-0">
-            <div className="command-shell w-full max-w-full">
-              <div className="mb-5 flex items-center justify-between gap-4">
+            <div className="featured-store-panel w-full max-w-full">
+              <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
                 <div>
                   <p className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">
-                    Live Brand Radar
+                    Featured Store Items
                   </p>
                   <h2 className="mt-1 font-display text-2xl font-bold text-white">
-                    Visibility Score Companion
+                    Quote-ready offers for brands that need to POP OUT now.
                   </h2>
                 </div>
                 <div className="signal-chip">
                   <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_#67e8f9]" />
-                  Score-ready
+                  Storefront live
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-[1.15fr_0.85fr]">
-                <div className="radar-panel">
-                  <div className="radar-core">
-                    <div className="radar-ring ring-one" />
-                    <div className="radar-ring ring-two" />
-                    <div className="radar-ring ring-three" />
-                    <div className="radar-sweep" />
-                    <div className="radar-dot dot-one" />
-                    <div className="radar-dot dot-two" />
-                    <div className="radar-dot dot-three" />
-                    <Gem className="relative z-10 h-12 w-12 text-cyan-100 drop-shadow-[0_0_18px_rgba(103,232,249,0.75)]" />
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {visibilityDimensions.map((dimension) => (
-                    <div key={dimension.label} className="mini-module">
-                      <dimension.icon className="h-5 w-5" />
-                      <span className="min-w-0 text-left">
-                        <span className="block truncate font-semibold text-white">
-                          {dimension.label}
-                        </span>
-                        <span className="block truncate text-xs text-zinc-500">
-                          {dimension.value}
-                        </span>
-                      </span>
+              <div className="grid gap-3">
+                {featuredStoreItems.map((item, index) => (
+                  <article
+                    key={item.name}
+                    className={cn(
+                      "featured-store-card",
+                      item.accent === "red" && "featured-store-card-red"
+                    )}
+                  >
+                    <div className="featured-store-index">{String(index + 1).padStart(2, "0")}</div>
+                    <span className="featured-store-icon">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <span className="featured-store-category">{item.category}</span>
+                      <h3 className="mt-1 font-display text-lg font-bold text-white">
+                        {item.name}
+                      </h3>
+                      <p className="mt-1 text-sm leading-6 text-zinc-400">{item.benefit}</p>
                     </div>
-                  ))}
-                </div>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="featured-store-cta"
+                    >
+                      {item.cta}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </article>
+                ))}
               </div>
 
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
                 {[
-                  { label: "Street Visibility", icon: Store, value: "Check" },
-                  { label: "Lead Capture", icon: MessageCircle, value: "Check" },
-                  { label: "Social Proof", icon: Radio, value: "Check" },
+                  { label: "Shopfront", value: "Preview" },
+                  { label: "Branding", value: "Quote" },
+                  { label: "Smart Wash", value: "WhatsApp" },
                 ].map((item) => (
-                  <div key={item.label} className="status-module">
-                    <item.icon className="h-5 w-5 text-cyan-200" />
+                  <div key={item.label} className="featured-store-mini">
                     <span className="text-xs text-zinc-500">{item.label}</span>
                     <strong className="font-display text-sm text-white">{item.value}</strong>
                   </div>
                 ))}
               </div>
-              <a href="#visibility-score" className="mt-5 flex w-full items-center justify-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18">
-                Run Visibility Score
+              <a href="#storefront" className="mt-5 flex w-full items-center justify-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-4 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18">
+                Explore Crystal Storefront
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -1052,18 +1130,14 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
           {proofWallCases.map((proofCase, index) => (
             <article key={proofCase.title} className="proof-wall-card">
-              <div className="proof-wall-media">
-                {proofCase.imageUrl ? (
-                  <img src={proofCase.imageUrl} alt={proofCase.title} />
-                ) : (
-                  <>
-                    <span className="card-icon">
-                      <proofCase.icon className="h-6 w-6" />
-                    </span>
-                    <span className="proof-wall-media-label">Real project photo ready</span>
-                  </>
-                )}
-              </div>
+              <EvidenceImage
+                imageUrl={proofCase.imageUrl}
+                title={proofCase.title}
+                icon={proofCase.icon}
+                label="Real project photo ready"
+                mediaClassName="proof-wall-media"
+                labelClassName="proof-wall-media-label"
+              />
 
               <div className="flex items-start justify-between gap-4">
                 <span className="proof-wall-tag">{proofCase.category}</span>
@@ -1241,62 +1315,117 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="score-result-panel">
-            <div className="score-orbit">
-              <div className="score-orbit-ring" />
-              <div className="score-orbit-core">
-                <span>{visibilityComplete ? `${visibilityScore}%` : "--"}</span>
-                <small>Visibility score</small>
+          <div className="space-y-5">
+            <aside className="command-shell radar-companion-shell">
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">
+                    Live Brand Radar
+                  </p>
+                  <h3 className="mt-1 font-display text-xl font-bold text-white">
+                    Score companion
+                  </h3>
+                </div>
+                <div className="signal-chip">
+                  <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_#67e8f9]" />
+                  Scan
+                </div>
               </div>
-            </div>
 
-            <div className="mt-8 flex items-center justify-between gap-3">
-              <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-cyan-100">
-                {visibilityComplete ? visibilityLabel : "Scanning"}
-              </span>
-              <Sparkles className="h-6 w-6 text-cyan-200" />
-            </div>
+              <div className="grid gap-4 sm:grid-cols-[0.82fr_1.18fr]">
+                <div className="radar-panel radar-panel-compact">
+                  <div className="radar-core radar-core-compact">
+                    <div className="radar-ring ring-one" />
+                    <div className="radar-ring ring-two" />
+                    <div className="radar-ring ring-three" />
+                    <div className="radar-sweep" />
+                    <div className="radar-dot dot-one" />
+                    <div className="radar-dot dot-two" />
+                    <div className="radar-dot dot-three" />
+                    <Gem className="relative z-10 h-9 w-9 text-cyan-100 drop-shadow-[0_0_18px_rgba(103,232,249,0.75)]" />
+                  </div>
+                </div>
 
-            <h3 className="mt-6 font-display text-3xl font-bold text-white">
-              {visibilityComplete ? visibilityLabel : "Complete the score"}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-zinc-300">
-              {visibilityRecommendation}
-            </p>
-
-            <div className="mt-6 space-y-3">
-              <div className="summary-row">
-                <span>Weak areas</span>
-                <strong>
-                  {visibilityWeakAreas.length
-                    ? visibilityWeakAreas.join(", ")
-                    : visibilityComplete
-                      ? "No major weak areas selected"
-                      : "Answer all questions to reveal weak areas"}
-                </strong>
+                <div className="grid gap-2">
+                  {visibilityDimensions.map((dimension) => (
+                    <div key={dimension.label} className="mini-module mini-module-compact">
+                      <dimension.icon className="h-4 w-4" />
+                      <span className="min-w-0 text-left">
+                        <span className="block truncate font-semibold text-white">
+                          {dimension.label}
+                        </span>
+                        <span className="block truncate text-xs text-zinc-500">
+                          {dimension.value}
+                        </span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="summary-row">
-                <span>Recommended upgrade</span>
-                <strong>{visibilityRecommendation}</strong>
-              </div>
-            </div>
 
-            <a
-              href={visibilityScoreLink}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                "mt-8 flex w-full items-center justify-center gap-2 rounded-md px-5 py-4 text-sm font-bold transition",
-                visibilityComplete
-                  ? "bg-white text-zinc-950 hover:bg-cyan-100"
-                  : "pointer-events-none border border-white/10 bg-white/5 text-zinc-500"
-              )}
-              aria-disabled={!visibilityComplete}
-            >
-              {visibilityComplete ? "Start Recommended Intake" : "Run Visibility Score"}
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </aside>
+              <a href="#visibility-score" className="mt-5 flex w-full items-center justify-center gap-2 rounded-md border border-cyan-300/35 bg-cyan-300/10 px-5 py-3 text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/18">
+                Run Visibility Score
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </aside>
+
+            <aside className="score-result-panel">
+              <div className="score-orbit">
+                <div className="score-orbit-ring" />
+                <div className="score-orbit-core">
+                  <span>{visibilityComplete ? `${visibilityScore}%` : "--"}</span>
+                  <small>Visibility score</small>
+                </div>
+              </div>
+
+              <div className="mt-8 flex items-center justify-between gap-3">
+                <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-cyan-100">
+                  {visibilityComplete ? visibilityLabel : "Scanning"}
+                </span>
+                <Sparkles className="h-6 w-6 text-cyan-200" />
+              </div>
+
+              <h3 className="mt-6 font-display text-3xl font-bold text-white">
+                {visibilityComplete ? visibilityLabel : "Complete the score"}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-zinc-300">
+                {visibilityRecommendation}
+              </p>
+
+              <div className="mt-6 space-y-3">
+                <div className="summary-row">
+                  <span>Weak areas</span>
+                  <strong>
+                    {visibilityWeakAreas.length
+                      ? visibilityWeakAreas.join(", ")
+                      : visibilityComplete
+                        ? "No major weak areas selected"
+                        : "Answer all questions to reveal weak areas"}
+                  </strong>
+                </div>
+                <div className="summary-row">
+                  <span>Recommended upgrade</span>
+                  <strong>{visibilityRecommendation}</strong>
+                </div>
+              </div>
+
+              <a
+                href={visibilityScoreLink}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(
+                  "mt-8 flex w-full items-center justify-center gap-2 rounded-md px-5 py-4 text-sm font-bold transition",
+                  visibilityComplete
+                    ? "bg-white text-zinc-950 hover:bg-cyan-100"
+                    : "pointer-events-none border border-white/10 bg-white/5 text-zinc-500"
+                )}
+                aria-disabled={!visibilityComplete}
+              >
+                {visibilityComplete ? "Start Recommended Intake" : "Run Visibility Score"}
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </aside>
+          </div>
         </div>
       </section>
 
@@ -1656,18 +1785,14 @@ export default function Home() {
             <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {filteredStorefrontProducts.map((product) => (
                 <article key={product.name} className="storefront-card">
-                  <div className="storefront-media">
-                    {product.imageUrl ? (
-                      <img src={product.imageUrl} alt={product.name} />
-                    ) : (
-                      <>
-                        <span className="card-icon">
-                          <product.icon className="h-6 w-6" />
-                        </span>
-                        <span className="storefront-media-label">Product photo ready</span>
-                      </>
-                    )}
-                  </div>
+                  <EvidenceImage
+                    imageUrl={product.imageUrl}
+                    title={product.name}
+                    icon={product.icon}
+                    label="Product photo ready"
+                    mediaClassName="storefront-media"
+                    labelClassName="storefront-media-label"
+                  />
 
                   <div className="flex items-start justify-between gap-4">
                     <span className="mt-1 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-zinc-300">
