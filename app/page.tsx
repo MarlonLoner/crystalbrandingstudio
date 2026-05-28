@@ -82,6 +82,7 @@ const upgradeWhatsappLink = (upgradeName: string) =>
 const navItems = [
   ["Home", "#home"],
   ["Brand Upgrades", "#upgrades"],
+  ["Proof Wall", "#proof-wall"],
   ["Visibility Score", "#visibility-score"],
   ["Project Builder", "#project-builder"],
   ["POP OUT Gallery", "#gallery"],
@@ -197,6 +198,81 @@ const trustStatements = [
   "Placeholder trust statement: clear quote path before production starts.",
   "Placeholder trust statement: practical rollout guidance for physical and digital visibility.",
   "Placeholder trust statement: WhatsApp-first communication for faster project movement.",
+];
+
+const proofWallCases = [
+  {
+    title: "Shopfront Visibility Upgrade",
+    category: "Shopfront Signage",
+    problem: "The storefront looked quiet from the road and people missed what the business offered.",
+    solution: "Crystal mapped a bolder fascia, clearer window message, and a stronger front-view POP OUT preview.",
+    result: "Before: easy to miss. After: clearer walk-in signal and quote-ready signage direction.",
+    metric: "+72% street presence",
+    href: makeWhatsAppLink(
+      "Hi Crystal Branding Studio, I want a shopfront visibility upgrade like the POP OUT Proof Wall example."
+    ),
+    icon: Store,
+  },
+  {
+    title: "3D Signage Authority Upgrade",
+    category: "3D Signage",
+    problem: "The brand needed a more premium, high-trust look for its main entrance.",
+    solution: "Crystal shaped a 3D signage direction with stronger depth, contrast, lighting, and brand authority.",
+    result: "Before: flat and forgettable. After: premium entrance presence with stronger recognition.",
+    metric: "Premium authority",
+    href: makeWhatsAppLink(
+      "Hi Crystal Branding Studio, I want a 3D signage authority upgrade like the POP OUT Proof Wall example."
+    ),
+    icon: Gem,
+  },
+  {
+    title: "Vehicle Branding Upgrade",
+    category: "Mobile Visibility",
+    problem: "The business had vehicles on the road but no strong brand signal while moving.",
+    solution: "Crystal planned vehicle graphics with clear services, contact points, and road-readable branding.",
+    result: "Before: transport only. After: mobile advertising that keeps working during daily routes.",
+    metric: "Route-ready ads",
+    href: makeWhatsAppLink(
+      "Hi Crystal Branding Studio, I want a vehicle branding upgrade like the POP OUT Proof Wall example."
+    ),
+    icon: Zap,
+  },
+  {
+    title: "Banner Campaign Upgrade",
+    category: "Banner / Print",
+    problem: "A promotion needed fast visibility but the message was not campaign-ready.",
+    solution: "Crystal clarified the offer, designed bold campaign graphics, and prepared print-ready banner assets.",
+    result: "Before: scattered promotion. After: focused campaign message for events, roadsides, and retail points.",
+    metric: "Campaign-ready",
+    href: makeWhatsAppLink(
+      "Hi Crystal Branding Studio, I want a banner campaign upgrade like the POP OUT Proof Wall example."
+    ),
+    icon: Megaphone,
+  },
+  {
+    title: "Digital Lead System",
+    category: "Digital Growth",
+    problem: "People showed interest online, but enquiries were not captured or followed up clearly.",
+    solution: "Crystal connected a landing page, WhatsApp CTA, lead path, and simple follow-up structure.",
+    result: "Before: attention leaked. After: a clearer enquiry system built for quote requests and follow-up.",
+    metric: "Lead path live",
+    href: makeWhatsAppLink(
+      "Hi Crystal Branding Studio, I want a digital lead system like the POP OUT Proof Wall example."
+    ),
+    icon: MonitorSmartphone,
+  },
+  {
+    title: "Smart Wash Reseller Push",
+    category: "Crystal Smart Wash",
+    problem: "The product needed clearer reseller visibility and a simple inquiry path for 1KG and 2KG packs.",
+    solution: "Crystal positioned Crystal Smart Wash as a focused washing powder offer with order, reseller, and bulk CTAs.",
+    result: "Before: unclear product inquiry. After: 1KG, 2KG, reseller pricing, and bulk order paths.",
+    metric: "1KG / 2KG focus",
+    href: makeWhatsAppLink(
+      "Hi Crystal Branding Studio, I want a Crystal Smart Wash reseller push like the POP OUT Proof Wall example."
+    ),
+    icon: Droplets,
+  },
 ];
 
 const ecosystem = [
@@ -723,6 +799,61 @@ Please guide me on the next steps and quote.`
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="proof-wall" className="section-band border-y border-white/10 bg-white/[0.025]">
+        <SectionHeader
+          eyebrow="POP OUT Proof Wall"
+          title="Placeholder proof stories that show how Crystal upgrades visibility."
+          copy="Use these case-study-style cards now, then replace them with real client examples, photos, and verified outcomes."
+        />
+
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+          {proofWallCases.map((proofCase, index) => (
+            <article key={proofCase.title} className="proof-wall-card">
+              <div className="flex items-start justify-between gap-4">
+                <span className="card-icon">
+                  <proofCase.icon className="h-6 w-6" />
+                </span>
+                <span className="proof-wall-metric">{proofCase.metric}</span>
+              </div>
+
+              <div className="mt-7 flex items-center gap-2">
+                <span className="proof-wall-index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="proof-wall-tag">{proofCase.category}</span>
+              </div>
+
+              <h3 className="mt-5 font-display text-2xl font-bold text-white">
+                {proofCase.title}
+              </h3>
+
+              <div className="mt-6 space-y-3">
+                <div className="proof-story-row">
+                  <span>Problem</span>
+                  <p>{proofCase.problem}</p>
+                </div>
+                <div className="proof-story-row proof-story-row-solution">
+                  <span>Crystal Solution</span>
+                  <p>{proofCase.solution}</p>
+                </div>
+                <div className="proof-story-row">
+                  <span>Result</span>
+                  <p>{proofCase.result}</p>
+                </div>
+              </div>
+
+              <a
+                href={proofCase.href}
+                target="_blank"
+                rel="noreferrer"
+                className="proof-wall-cta"
+              >
+                Request This Upgrade
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
