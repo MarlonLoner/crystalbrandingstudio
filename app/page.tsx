@@ -179,30 +179,30 @@ const galleryItems = [
 const proofMetrics = [
   {
     value: "500+",
-    label: "Visibility assets",
-    copy: "Signage, print, vehicle, shopfront, and campaign assets shaped for stronger visibility.",
+    label: "Brand Visibility Assets",
+    copy: "Signage, banners, shopfront, vehicle, display, and campaign materials created to make brands easier to notice.",
   },
   {
     value: "24h",
-    label: "Preview response target",
-    copy: "Fast first response target after a shopfront preview or quote request.",
+    label: "Preview Response Target",
+    copy: "Fast first response after a quote request, shopfront photo, or branding brief is received.",
   },
   {
     value: "06",
-    label: "Growth lanes",
-    copy: "Signage, shopfronts, vehicles, digital systems, product campaigns, and media visibility.",
+    label: "Visibility Categories",
+    copy: "Shopfronts, 3D signage, vehicle branding, banners, display products, and digital campaign support.",
   },
   {
     value: "1",
-    label: "Connected ecosystem",
-    copy: "Advertising, printing, signage, branding, fittings, display products, and visibility solutions aligned in one flow.",
+    label: "Connected Brand Partner",
+    copy: "Design, print, production, and visibility thinking aligned so your project moves from idea to installation.",
   },
 ];
 
 const trustStatements = [
   "Clear quote path before production starts.",
-  "Practical rollout guidance for physical and digital visibility.",
-  "Fast WhatsApp-first communication for smoother project movement.",
+  "Signage, print, vehicle, display, and digital visibility in one place.",
+  "WhatsApp-first communication for faster approvals and smoother project movement.",
 ];
 
 // Replace these starter cases with real Crystal projects: client/project name, category,
@@ -1124,14 +1124,14 @@ export default function Home() {
           <div className="proof-panel">
             <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
               <div>
-                <p className="section-eyebrow">Proof and trust signals</p>
+                <p className="section-eyebrow">WHY CRYSTAL WORKS</p>
                 <h2 className="mt-3 font-display text-3xl font-black leading-tight text-white sm:text-4xl">
-                  Built to move visitors from interest to action.
+                  One place for signage, print, branding, and visibility.
                 </h2>
                 <p className="mt-5 text-sm leading-7 text-zinc-300 sm:text-base">
-                  Crystal combines practical production, clear communication,
-                  and visibility thinking so branding work is easier to quote,
-                  approve, produce, and launch.
+                  From shopfront signage to campaign materials, Crystal helps
+                  businesses turn ideas into visible, quote-ready,
+                  production-ready brand assets.
                 </p>
                 <div className="mt-6 space-y-3">
                   {trustStatements.map((statement) => (
