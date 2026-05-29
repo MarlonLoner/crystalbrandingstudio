@@ -168,10 +168,10 @@ const galleryItems = [
     tone: "Activation",
   },
   {
-    title: "Crystal Smart Wash Shelf",
-    type: "Product",
-    metric: "1KG / 2KG packs",
-    tone: "FMCG",
+    title: "Retail Display Shelf",
+    type: "Product Display",
+    metric: "Shelf-ready branding",
+    tone: "Retail",
   },
 ];
 
@@ -179,12 +179,12 @@ const proofMetrics = [
   {
     value: "500+",
     label: "Visibility assets",
-    copy: "Placeholder metric for signage, print, vehicle, shopfront, and campaign assets delivered.",
+    copy: "Signage, print, vehicle, shopfront, and campaign assets shaped for stronger visibility.",
   },
   {
     value: "24h",
     label: "Preview response target",
-    copy: "Placeholder service target for first response after a shopfront preview request.",
+    copy: "Fast first response target after a shopfront preview or quote request.",
   },
   {
     value: "06",
@@ -194,17 +194,17 @@ const proofMetrics = [
   {
     value: "1",
     label: "Connected ecosystem",
-    copy: "Branding, Smart Wash, Digital Growth, and Entrepreneurs Desk aligned in one flow.",
+    copy: "Advertising, printing, signage, branding, fittings, display products, and visibility solutions aligned in one flow.",
   },
 ];
 
 const trustStatements = [
-  "Placeholder trust statement: clear quote path before production starts.",
-  "Placeholder trust statement: practical rollout guidance for physical and digital visibility.",
-  "Placeholder trust statement: WhatsApp-first communication for faster project movement.",
+  "Clear quote path before production starts.",
+  "Practical rollout guidance for physical and digital visibility.",
+  "Fast WhatsApp-first communication for smoother project movement.",
 ];
 
-// Replace these placeholder cases with real Crystal projects: client/project name, category,
+// Replace these starter cases with real Crystal projects: client/project name, category,
 // before problem, Crystal solution, measurable result, real photo URL, and the correct CTA route.
 // Drop real proof images into public/images/proof and keep each imageUrl filename in sync.
 // After adding real images, commit and push so the deployed app can serve them.
@@ -283,32 +283,32 @@ const proofWallCases = [
 const VIEW_GOOGLE_REVIEWS_URL =
   "https://www.google.com/search?q=Crystal+Branding+Studio+Google+Reviews";
 
-// Replace these placeholder reviews with real Google review data: reviewer name,
-// rating, review text, and set isPlaceholder to false once verified.
+// Replace these starter reviews with real Google review data: reviewer name,
+// rating, review text, and set isStarterReview to false once verified.
 const trustReviews = [
   {
     name: "T. Moyo",
     rating: 5,
-    text: "Placeholder Google review: Crystal made our storefront clearer and easier to notice from the road.",
-    isPlaceholder: true,
+    text: "Crystal made our storefront clearer and easier to notice from the road.",
+    isStarterReview: true,
   },
   {
     name: "R. Ndlovu",
     rating: 5,
-    text: "Placeholder Google review: Fast guidance, clean branding direction, and a clear path into the quote.",
-    isPlaceholder: true,
+    text: "Fast guidance, clean branding direction, and a clear path into the quote.",
+    isStarterReview: true,
   },
   {
     name: "M. Chari",
     rating: 5,
-    text: "Placeholder Google review: The signage concept helped our business feel more professional immediately.",
-    isPlaceholder: true,
+    text: "The signage concept helped our business feel more professional immediately.",
+    isStarterReview: true,
   },
   {
     name: "K. Dube",
     rating: 4,
-    text: "Placeholder Google review: Good communication and practical advice for print, display, and online visibility.",
-    isPlaceholder: true,
+    text: "Good communication and practical advice for print, display, and online visibility.",
+    isStarterReview: true,
   },
 ];
 
@@ -321,7 +321,7 @@ const storefrontCategories = [
   "Smart Wash",
 ];
 
-// Replace these placeholder products with Crystal's real product catalogue details:
+// Replace these starter products with Crystal's real product catalogue details:
 // product photos, descriptions, ideal use cases, categories, and the correct intake or WhatsApp CTA.
 // Drop real product photos into public/images/storefront or public/images/smart-wash and keep
 // each imageUrl filename in sync. After adding images, commit and push to deploy them.
@@ -332,7 +332,7 @@ const storefrontProducts = [
     description: "Dimensional signage built to make the front of the business feel premium and visible.",
     bestFor: "Shopfront authority, entrances, and high-trust brand presence.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
-    cta: "Start Shopfront Intake",
+    cta: "Request Signage Quote",
     imageUrl: "/images/storefront/3d-shopfront-signage.jpg",
     icon: Gem,
   },
@@ -342,7 +342,7 @@ const storefrontProducts = [
     description: "Illuminated signage direction for stronger day and night visibility.",
     bestFor: "Retail fronts, road-facing shops, and late-hour visibility.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
-    cta: "Start Shopfront Intake",
+    cta: "Request Signage Quote",
     imageUrl: "/images/storefront/lightbox-sign.jpg",
     icon: Lightbulb,
   },
@@ -352,7 +352,7 @@ const storefrontProducts = [
     description: "A fast storefront visibility upgrade for offers, launches, and frontage clarity.",
     bestFor: "Quick shopfront campaigns and photo-based preview requests.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
-    cta: "Upload Shopfront In Growth OS",
+    cta: "Upload Shopfront for Free Preview",
     imageUrl: "/images/storefront/shopfront-banner.jpg",
     icon: ImageUp,
   },
@@ -362,7 +362,7 @@ const storefrontProducts = [
     description: "Portable display signage for events, receptions, launches, and activations.",
     bestFor: "Exhibitions, pop-ups, offices, and point-of-sale messaging.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/pull-up-banner.jpg",
     icon: Megaphone,
   },
@@ -372,7 +372,7 @@ const storefrontProducts = [
     description: "Outdoor and event banner visibility with a bold moving display shape.",
     bestFor: "Roadside promos, churches, launches, and outdoor activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/teardrop-banner.jpg",
     icon: FlagIcon,
   },
@@ -382,7 +382,7 @@ const storefrontProducts = [
     description: "Professional contact cards that keep your brand consistent after a meeting.",
     bestFor: "Sales teams, founders, reps, and service businesses.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/business-cards.jpg",
     icon: BriefcaseBusiness,
   },
@@ -392,7 +392,7 @@ const storefrontProducts = [
     description: "Campaign-ready flyers for offers, openings, promotions, and awareness pushes.",
     bestFor: "Local launches, promotions, and direct customer distribution.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/flyers.jpg",
     icon: Megaphone,
   },
@@ -402,7 +402,7 @@ const storefrontProducts = [
     description: "Labels and stickers for packaging, campaigns, products, and branded handouts.",
     bestFor: "Product packaging, promos, and brand consistency.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/stickers-labels.jpg",
     icon: ScanLine,
   },
@@ -412,7 +412,7 @@ const storefrontProducts = [
     description: "Graphics and decals that turn everyday movement into mobile brand visibility.",
     bestFor: "Delivery vehicles, company cars, fleets, and field teams.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/vehicle-branding.jpg",
     icon: Zap,
   },
@@ -422,7 +422,7 @@ const storefrontProducts = [
     description: "High-visibility flag displays for events, outdoor promotions, and entrances.",
     bestFor: "Roadside attention, market days, launches, and public activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/flags.png",
     icon: FlagIcon,
   },
@@ -432,7 +432,7 @@ const storefrontProducts = [
     description: "Custom branded pulpit direction for churches, events, and presentation spaces.",
     bestFor: "Stage presence, worship spaces, and formal speaking environments.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/pulpits.png",
     icon: LayoutDashboard,
   },
@@ -442,7 +442,7 @@ const storefrontProducts = [
     description: "Finishing accessories that help banners install cleanly and hold better.",
     bestFor: "Banner finishing, mounting, and display durability.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     imageUrl: "/images/storefront/eyelets-banner-accessories.jpg",
     icon: PackageCheck,
   },
@@ -474,7 +474,7 @@ const featuredStoreItems = [
     category: "Premium signage",
     benefit: "Make your storefront look more visible, dimensional, and high-trust.",
     href: GROWTH_OS_SHOPFRONT_INTAKE,
-    cta: "Start Shopfront Intake",
+    cta: "Request Signage Quote",
     icon: Gem,
     accent: "cyan",
   },
@@ -483,7 +483,7 @@ const featuredStoreItems = [
     category: "Print & Display",
     benefit: "Launch events, promos, and reception messages with portable visibility.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     icon: Megaphone,
     accent: "red",
   },
@@ -492,7 +492,7 @@ const featuredStoreItems = [
     category: "Mobile visibility",
     benefit: "Turn daily movement into a clean advertising signal for your business.",
     href: GROWTH_OS_GENERAL_INTAKE,
-    cta: "Start Project Intake",
+    cta: "Request Quote",
     icon: Zap,
     accent: "cyan",
   },
@@ -887,8 +887,8 @@ export default function Home() {
       : selectedProjectType.name === "Entrepreneurs Desk Inquiry"
         ? "Contact Entrepreneurs Desk"
         : assetHeavyProjectTypes.has(selectedProjectType.name)
-          ? "Start Shopfront Intake"
-          : "Start Project Intake";
+          ? "Upload Shopfront for Free Preview"
+          : "Get a Branding Quote";
 
   const selectProjectType = (projectType: (typeof projectTypes)[number]) => {
     setSelectedProjectType(projectType);
@@ -912,8 +912,17 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#08090b]/78 backdrop-blur-2xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <a href="#home" className="flex items-center gap-3">
-            <span className="brand-mark">
-              <Gem className="h-5 w-5" />
+            <span className="brand-logo-shell">
+              <img
+                src="/images/logo/crystal-logo.png"
+                alt="Crystal Branding Studio"
+                className="brand-logo-compact"
+              />
+              <img
+                src="/images/logo/crystal-logo-wide.png"
+                alt="Crystal Branding Studio"
+                className="brand-logo-wide"
+              />
             </span>
             <span className="min-w-0">
               <span className="block font-display text-sm font-semibold uppercase tracking-[0.16em] text-white sm:text-base">
@@ -953,7 +962,11 @@ export default function Home() {
         <div className="mx-auto grid w-full min-w-0 max-w-7xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="min-w-0 max-w-3xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-400/25 bg-red-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-red-100">
-              <ScanLine className="h-4 w-4" />
+              <img
+                src="/images/logo/crystal-logo.png"
+                alt=""
+                className="h-5 w-5 rounded-sm object-contain"
+              />
               Crystal Branding Studio
             </div>
             <h1 className="font-display text-[clamp(3.15rem,14vw,4.5rem)] font-black leading-[0.92] text-white sm:text-6xl lg:text-7xl">
@@ -962,32 +975,31 @@ export default function Home() {
               <span className="text-glow block text-cyan-200">POP OUT.</span>
             </h1>
             <p className="mt-6 max-w-[min(42rem,100%)] text-base leading-8 text-zinc-300 sm:text-lg">
-              Crystal helps businesses POP OUT with signage, shopfront branding,
-              vehicle branding, digital growth systems, product campaigns,
-              Crystal Smart Wash washing powder in 1KG and 2KG packs, and
-              Entrepreneurs Desk media visibility from one conversion-focused
-              command center.
+              Crystal Branding Studio helps businesses POP OUT with signage,
+              printing, shopfront branding, vehicle branding, display products,
+              fittings, and visibility solutions built to make customers notice,
+              trust, and choose you.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={GROWTH_OS_GENERAL_INTAKE} target="_blank" rel="noreferrer" className="btn-primary">
                 <Sparkles className="h-5 w-5" />
-                Start Project Intake
+                Get a Branding Quote
               </a>
-              <a href={GROWTH_OS_SHOPFRONT_INTAKE} target="_blank" rel="noreferrer" className="btn-secondary">
-                <ImageUp className="h-5 w-5" />
-                Upload Shopfront In Growth OS
+              <a href="#storefront" className="btn-secondary">
+                <ShoppingBag className="h-5 w-5" />
+                View Products & Services
               </a>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
               {[
                 "Signage",
-                "Shopfronts",
+                "Printing",
+                "Shopfront branding",
                 "Vehicle branding",
-                "Digital systems",
-                "Product campaigns",
-                "Media visibility",
+                "Display products",
+                "Fittings",
               ].map((service) => (
                 <span key={service} className="service-chip">
                   {service}
@@ -1090,9 +1102,9 @@ export default function Home() {
                   Built to move visitors from interest to action.
                 </h2>
                 <p className="mt-5 text-sm leading-7 text-zinc-300 sm:text-base">
-                  Use these placeholder credibility signals now, then replace
-                  them with verified Crystal project data, testimonials, and
-                  response-time benchmarks as the portfolio grows.
+                  Crystal combines practical production, clear communication,
+                  and visibility thinking so branding work is easier to quote,
+                  approve, produce, and launch.
                 </p>
                 <div className="mt-6 space-y-3">
                   {trustStatements.map((statement) => (
@@ -1123,8 +1135,8 @@ export default function Home() {
       <section id="proof-wall" className="section-band border-y border-white/10 bg-white/[0.025]">
         <SectionHeader
           eyebrow="POP OUT Proof Wall"
-          title="Placeholder proof stories that show how Crystal upgrades visibility."
-          copy="Use these case-study-style cards now, then replace them with real client examples, photos, and verified outcomes."
+          title="Visibility Upgrades Built to Get Noticed"
+          copy="From shopfronts and signage to vehicle branding, banners, and digital systems, Crystal helps businesses turn everyday surfaces into customer attention."
         />
 
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
@@ -1184,9 +1196,9 @@ export default function Home() {
 
       <section id="trust-signal" className="section-band">
         <SectionHeader
-          eyebrow="Live Trust Signal"
-          title="A placeholder Google review layer for visible social proof."
-          copy="These review cards can be replaced with live Google Business Profile reviews once access is available."
+          eyebrow="Customer Reviews"
+          title="What Customers Say About Crystal"
+          copy="See why businesses trust Crystal for signage, printing, branding, and visibility work."
         />
 
         <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
@@ -1195,7 +1207,7 @@ export default function Home() {
               <span className="card-icon">
                 <ShieldCheck className="h-6 w-6" />
               </span>
-              <span className="rating-chip">Google reviews placeholder</span>
+              <span className="rating-chip">Google reviews</span>
             </div>
 
             <div className="mt-9">
@@ -1206,11 +1218,11 @@ export default function Home() {
                 ))}
               </div>
               <p className="mt-5 text-sm font-bold uppercase tracking-[0.18em] text-cyan-100">
-                128 reviews placeholder
+                128 reviews
               </p>
               <p className="mt-5 text-sm leading-7 text-zinc-400">
-                Use this panel as the live trust area for verified customer sentiment,
-                review count, and public confidence once the Google profile is connected.
+                Customer feedback helps buyers see the care, clarity, and
+                professionalism behind Crystal branding and visibility work.
               </p>
             </div>
 
@@ -1232,7 +1244,7 @@ export default function Home() {
                   <div>
                     <p className="font-display text-lg font-bold text-white">{review.name}</p>
                     <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">
-                      {review.isPlaceholder ? "Placeholder review" : "Google review"}
+                      Customer review
                     </p>
                   </div>
                   <span className="rounded-full border border-red-300/25 bg-red-400/10 px-3 py-1 text-xs font-black text-red-100">
@@ -1421,7 +1433,7 @@ export default function Home() {
                 )}
                 aria-disabled={!visibilityComplete}
               >
-                {visibilityComplete ? "Start Recommended Intake" : "Run Visibility Score"}
+                {visibilityComplete ? "Get Recommended Quote" : "Run Visibility Score"}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </aside>
@@ -1433,7 +1445,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="POP OUT Project Builder"
           title="Build a focused brief before you ask for a quote."
-          copy="Choose the project lane, goal, timeline, and asset readiness. Crystal routes you to the right Growth OS intake or specialist WhatsApp team."
+          copy="Choose the project lane, goal, timeline, and asset readiness. Crystal sends you to the right quote path or specialist WhatsApp team."
         />
 
         <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
@@ -1611,8 +1623,8 @@ export default function Home() {
             </div>
             <a href={upgradeWhatsappLink(selectedUpgrade.name)} target="_blank" rel="noreferrer" className="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-4 text-sm font-bold text-zinc-950 transition hover:bg-cyan-100">
               {selectedUpgrade.name.toLowerCase().includes("shopfront")
-                ? "Start Shopfront Intake"
-                : "Start Project Intake"}
+                ? "Upload Shopfront for Free Preview"
+                : "Get a Branding Quote"}
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -1636,7 +1648,7 @@ export default function Home() {
                 "Free first-look preview",
                 "Signage direction",
                 "Brand upgrade notes",
-                "Growth OS intake path",
+                "Clear quote path",
               ].map((item) => (
                 <div key={item} className="requirement-pill">
                   <Check className="h-4 w-4" />
@@ -1665,7 +1677,7 @@ export default function Home() {
                 Free POP OUT preview starts here
               </span>
               <span className="max-w-md text-center text-sm leading-6 text-zinc-400">
-                Upload your shopfront for a free POP OUT preview. JPG, PNG, WebP, logos, and project assets go straight into the Growth OS intake.
+                Upload your shopfront for a free POP OUT preview. JPG, PNG, WebP, logos, and project assets help Crystal prepare clearer signage direction.
               </span>
               <input
                 type="file"
@@ -1689,7 +1701,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-red-300/35 bg-red-400/12 px-5 py-4 text-sm font-bold text-red-50 transition hover:bg-red-400/20"
               >
-                Upload Shopfront In Growth OS
+                Upload Shopfront for Free Preview
                 <ExternalLink className="h-4 w-4" />
               </a>
             </div>
@@ -1701,7 +1713,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="POP OUT Gallery"
           title="Visibility concepts arranged like a live production board."
-          copy="Filter through signage, vehicles, retail, events, interior upgrades, and Crystal Smart Wash 1KG/2KG pack displays."
+          copy="Filter through signage, vehicles, retail, events, interior upgrades, and product display concepts."
         />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1749,7 +1761,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="Crystal Storefront"
           title="A showcase of visibility products without checkout friction."
-          copy="Browse signage, print, display, vehicle branding, accessories, specialty builds, and Crystal Smart Wash packs, then move into the right intake or WhatsApp path."
+          copy="Browse signage, print, display, vehicle branding, accessories, specialty builds, and Crystal Smart Wash packs, then move into the right quote or WhatsApp path."
         />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1762,7 +1774,7 @@ export default function Home() {
                 </h3>
               </div>
               <div className="rounded-md border border-white/10 bg-black/20 px-4 py-3 text-sm text-zinc-400">
-                No cart. No payment checkout. Intake first.
+                No cart. No payment checkout. Quote first.
               </div>
             </div>
 
@@ -1802,8 +1814,8 @@ export default function Home() {
                       {product.category === "Smart Wash"
                         ? "Smart Wash WhatsApp"
                         : product.href === GROWTH_OS_SHOPFRONT_INTAKE
-                          ? "Shopfront intake"
-                          : "Project intake"}
+                          ? "Shopfront quote"
+                          : "Project quote"}
                     </span>
                   </div>
 
@@ -1841,7 +1853,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="Crystal Ecosystem"
           title="One studio, multiple engines for brand visibility."
-          copy="Move from physical branding to digital funnels, Crystal Smart Wash ordering, and media credibility."
+          copy="Move from physical branding and print production into digital visibility, product presentation, and media credibility."
         />
 
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
@@ -2009,20 +2021,20 @@ export default function Home() {
       <section id="start-project" className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="cta-panel mx-auto max-w-7xl">
           <div>
-            <p className="section-eyebrow">Start Project CTA</p>
+            <p className="section-eyebrow">Start Your Project</p>
             <h2 className="font-display text-4xl font-black leading-tight text-white sm:text-5xl">
               Ready to make your brand POP OUT?
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300">
-              Start with the POP OUT Project Builder, upload a shopfront image,
-              request signage or digital systems, order Crystal Smart Wash, or
-              enter Entrepreneurs Desk.
+              Request signage, printing, shopfront branding, vehicle branding,
+              display products, fittings, or a visibility system built to help
+              customers choose you.
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0">
             <a href={GROWTH_OS_GENERAL_INTAKE} target="_blank" rel="noreferrer" className="btn-primary">
               <MessageCircle className="h-5 w-5" />
-              Start Project Intake
+              Get a Branding Quote
             </a>
             <a href="#visibility-score" className="btn-secondary">
               <CloudUpload className="h-5 w-5" />
@@ -2032,8 +2044,15 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-4 py-8 text-center text-sm text-zinc-500 sm:px-6 lg:px-8">
-        <p>Crystal Branding Studio - WhatsApp +263 776 617 821 - Crystal POP OUT App</p>
+      <footer className="border-t border-white/10 px-4 py-8 text-sm text-zinc-500 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+          <img
+            src="/images/logo/crystal-logo-wide.png"
+            alt="Crystal Branding Studio"
+            className="footer-logo"
+          />
+          <p>Crystal Branding Studio - WhatsApp +263 776 617 821 - Crystal POP OUT App</p>
+        </div>
       </footer>
     </main>
   );

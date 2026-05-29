@@ -74,6 +74,60 @@ button {
   box-shadow: 0 0 30px rgba(56, 232, 255, 0.18);
 }
 
+.brand-logo-shell {
+  display: grid;
+  height: 44px;
+  min-width: 44px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(103, 232, 249, 0.35);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, rgba(103, 232, 249, 0.13), rgba(255, 48, 79, 0.12)),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 30px rgba(56, 232, 255, 0.16);
+}
+
+.brand-logo-compact,
+.brand-logo-wide,
+.footer-logo {
+  display: block;
+  object-fit: contain;
+}
+
+.brand-logo-compact {
+  height: 30px;
+  width: 30px;
+}
+
+.brand-logo-wide {
+  display: none;
+  height: 30px;
+  width: 132px;
+}
+
+.footer-logo {
+  max-height: 42px;
+  max-width: 190px;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 18px rgba(103, 232, 249, 0.16));
+}
+
+@media (min-width: 640px) {
+  .brand-logo-shell {
+    width: 150px;
+    padding: 0 10px;
+  }
+
+  .brand-logo-compact {
+    display: none;
+  }
+
+  .brand-logo-wide {
+    display: block;
+  }
+}
+
 .text-glow {
   text-shadow:
     0 0 22px rgba(103, 232, 249, 0.55),
