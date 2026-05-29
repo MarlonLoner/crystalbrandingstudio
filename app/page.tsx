@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   ArrowRight,
   BadgeDollarSign,
@@ -545,12 +546,14 @@ const smartWashPacks = [
     title: "Crystal Smart Wash 1KG",
     copy: "Compact pack for household use, trial orders, and fast shelf movement.",
     href: serviceLinks.smartWash1Kg,
+    imageUrl: "/images/smartwash/smart-wash-1kg.png",
   },
   {
     size: "2KG",
     title: "Crystal Smart Wash 2KG",
     copy: "Larger value pack for families, repeat buyers, and higher-volume orders.",
     href: serviceLinks.smartWash2Kg,
+    imageUrl: "/images/smartwash/smart-wash-2kg.png",
   },
 ];
 
@@ -778,6 +781,8 @@ function EvidenceImage({
   label,
   mediaClassName,
   labelClassName,
+  sizes,
+  priority = false,
 }: {
   imageUrl: string;
   title: string;
@@ -785,6 +790,8 @@ function EvidenceImage({
   label: string;
   mediaClassName: string;
   labelClassName: string;
+  sizes: string;
+  priority?: boolean;
 }) {
   const [imageFailed, setImageFailed] = useState(false);
   const shouldShowImage = imageUrl && !imageFailed;
@@ -792,7 +799,15 @@ function EvidenceImage({
   return (
     <div className={mediaClassName}>
       {shouldShowImage ? (
-        <img src={imageUrl} alt={title} onError={() => setImageFailed(true)} />
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          sizes={sizes}
+          className="object-cover"
+          priority={priority}
+          onError={() => setImageFailed(true)}
+        />
       ) : (
         <>
           <span className="card-icon">
@@ -913,14 +928,22 @@ export default function Home() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <a href="#home" className="flex items-center gap-3">
             <span className="brand-logo-shell">
-              <img
+              <Image
                 src="/images/logo/crystal-logo.png"
                 alt="Crystal Branding Studio"
+                width={30}
+                height={30}
+                sizes="30px"
+                priority
                 className="brand-logo-compact"
               />
-              <img
+              <Image
                 src="/images/logo/crystal-logo-wide.png"
                 alt="Crystal Branding Studio"
+                width={132}
+                height={30}
+                sizes="132px"
+                priority
                 className="brand-logo-wide"
               />
             </span>
@@ -962,9 +985,13 @@ export default function Home() {
         <div className="mx-auto grid w-full min-w-0 max-w-7xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="min-w-0 max-w-3xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-400/25 bg-red-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-red-100">
-              <img
+              <Image
                 src="/images/logo/crystal-logo.png"
                 alt=""
+                width={20}
+                height={20}
+                sizes="20px"
+                priority
                 className="h-5 w-5 rounded-sm object-contain"
               />
               Crystal Branding Studio
@@ -1149,6 +1176,7 @@ export default function Home() {
                 label="Real project photo ready"
                 mediaClassName="proof-wall-media"
                 labelClassName="proof-wall-media-label"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               />
 
               <div className="flex items-start justify-between gap-4">
@@ -1804,6 +1832,7 @@ export default function Home() {
                     label="Product photo ready"
                     mediaClassName="storefront-media"
                     labelClassName="storefront-media-label"
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   />
 
                   <div className="flex items-start justify-between gap-4">
@@ -1941,6 +1970,16 @@ export default function Home() {
               </span>
             </div>
 
+            <EvidenceImage
+              imageUrl={selectedSmartWashPack.imageUrl}
+              title={selectedSmartWashPack.title}
+              icon={Droplets}
+              label="Smart Wash pack photo ready"
+              mediaClassName="smart-wash-media"
+              labelClassName="storefront-media-label"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+
             <p className="mt-5 text-sm leading-7 text-zinc-300">
               Current focus: {selectedSmartWashPack.copy} Use the action buttons
               below to open a specific WhatsApp order or reseller inquiry.
@@ -2046,9 +2085,12 @@ export default function Home() {
 
       <footer className="border-t border-white/10 px-4 py-8 text-sm text-zinc-500 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <img
+          <Image
             src="/images/logo/crystal-logo-wide.png"
             alt="Crystal Branding Studio"
+            width={190}
+            height={42}
+            sizes="190px"
             className="footer-logo"
           />
           <p>Crystal Branding Studio - WhatsApp +263 776 617 821 - Crystal POP OUT App</p>
