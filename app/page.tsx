@@ -274,7 +274,7 @@ const proofWallCases = [
     href: makeSmartWashWhatsAppLink(
       "Hi Crystal Branding Studio, I want a Crystal Smart Wash reseller push like the POP OUT Proof Wall example."
     ),
-    imageUrl: "/images/proof/smart-wash-reseller-push.jpg",
+    imageUrl: "/images/smartwash/smart-wash-reseller-push.jpg",
     icon: Droplets,
   },
 ];
@@ -423,7 +423,7 @@ const storefrontProducts = [
     bestFor: "Roadside attention, market days, launches, and public activations.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: "/images/storefront/flags.jpg",
+    imageUrl: "/images/storefront/flags.png",
     icon: FlagIcon,
   },
   {
@@ -433,7 +433,7 @@ const storefrontProducts = [
     bestFor: "Stage presence, worship spaces, and formal speaking environments.",
     href: GROWTH_OS_GENERAL_INTAKE,
     cta: "Start Project Intake",
-    imageUrl: "/images/storefront/pulpits.jpg",
+    imageUrl: "/images/storefront/pulpits.png",
     icon: LayoutDashboard,
   },
   {
@@ -453,7 +453,7 @@ const storefrontProducts = [
     bestFor: "Household use, trial orders, and reseller shelf testing.",
     href: serviceLinks.smartWash1Kg,
     cta: "WhatsApp Smart Wash Team",
-    imageUrl: "/images/smart-wash/smart-wash-1kg.png",
+    imageUrl: "/images/smartwash/smart-wash-1kg.png",
     icon: Droplets,
   },
   {
@@ -463,7 +463,7 @@ const storefrontProducts = [
     bestFor: "Repeat buyers, families, bulk interest, and reseller demand.",
     href: serviceLinks.smartWash2Kg,
     cta: "WhatsApp Smart Wash Team",
-    imageUrl: "/images/smart-wash/smart-wash-2kg.png",
+    imageUrl: "/images/smartwash/smart-wash-2kg.png",
     icon: Droplets,
   },
 ];
