@@ -931,18 +931,18 @@ export default function Home() {
               <Image
                 src="/images/logo/crystal-logo.png"
                 alt="Crystal Branding Studio"
-                width={30}
-                height={30}
-                sizes="30px"
+                width={50}
+                height={44}
+                sizes="50px"
                 priority
                 className="brand-logo-compact"
               />
               <Image
                 src="/images/logo/crystal-logo-wide.png"
                 alt="Crystal Branding Studio"
-                width={132}
-                height={30}
-                sizes="132px"
+                width={178}
+                height={42}
+                sizes="178px"
                 priority
                 className="brand-logo-wide"
               />
